@@ -1,10 +1,13 @@
 import Head from "next/head";
 
+
 import Table from "../components/Table";
 import Card from "../components/Card";
 
 
+
 export default function Home() {
+
   return (
     <div className="z-0">
       
