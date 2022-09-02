@@ -1,16 +1,8 @@
 import React from "react";
-import axios from 'axios'
-import {useState,useEffect} from 'react'
+
 
 function Table() {
-  const [table,setTable]=useState([]);
-  useEffect(()=>{
-    const getData = async() =>{
-      const {data: res} = await axios.get('')
-      setTable(res)
-    }
-    getData();
-  },[])
+ 
   return (
     <div>
       <div className="container p-2 mx-auto rounded-md sm:p-4 text-sky-100 bg-sky-900">

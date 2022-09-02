@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 
-import Table from "../components/Table";
-import Card from "../components/Card";
+import Table from "../Components/Table";
+import Card from "../Components/Card";
 
 
 
