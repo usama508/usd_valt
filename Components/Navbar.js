@@ -2,28 +2,26 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { list } from "postcss";
 
 
 
 
 function Navbar() {
-  const router = useRouter()
-  const [search, setSearch] = useState("")
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSearch = (e) => {
-    e.preventDefault()
-  }
-  console.log(search)
 
 
+
+  
+  
+        
+const [open,setOpen] =useState(false)
 
 
 
 
   return (
     <div className="sticky top-0 z-10">
-      <header className="p-4 bg-sky-900 text-sky-100 ">
+      <header className="p-5 bg-sky-900 shadow text-sky-100 md:flex md:items-center md:justify-between">
         <div className="container w-full flex justify-between h-8 mx-auto ">
           <Link href="/">
             <a
@@ -35,62 +33,64 @@ function Navbar() {
 
               <p className="ml-2 text-xl font-semibold">USD_Valt</p>
             </a>
-          </Link>
 
-          <ul className="items-stretch  flex flex-wrap space-x-3 md:flex">
-            <li className="flex">
+          </Link>
+          <div onClick={()=>setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden ">
+          
+
+            <ion-icon  name={open ? 'close' : 'menu'}></ion-icon>
+          
+          </div>
+          <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute  md:static md:z-auto z-[-1]  bg-sky-900 w-full left-0 md:w-auto
+                md:pl-0 pl-9  transition-all ease-in duration-500 ${open ? 'top-20':'top-[-490px]'}`} >
+            <li className="md:ml-8 text-xl md:my-0 my-7">
               <Link href="/contact">
                 <a
                   rel="noopener noreferrer"
                   href=""
-                  className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+                  className="text-xl hover:text-sky-500 duration-500"
                 >
                   Contact
                 </a>
               </Link>
             </li>
-            <li className="flex">
+            <li className="md:ml-8 text-xl md:my-0 my-7">
               <Link href="/about">
                 <a
                   rel="noopener noreferrer"
                   href=""
-                  className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+                  className="text-xl hover:text-sky-500 duration-500"
                 >
                   About us
                 </a>
               </Link>
             </li>
-            <li className="flex"><Link href='/signup'><a rel="noopener noreferrer"
+            <li className="md:ml-8 text-xl md:my-0 my-7"><Link href='/signup'><a rel="noopener noreferrer"
               href=""
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className="text-xl hover:text-sky-500 duration-500"
             >
               SignUp</a>
             </Link>
             </li>
 
-            <li className="flex"><Link href='/login'><a
+            <li className="md:ml-8 text-xl md:my-0 my-7"><Link href='/login'><a
               rel="noopener noreferrer"
               href=""
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+              className="text-xl hover:text-sky-500 duration-500"
             >
               Login
             </a>
             </Link>
             </li>
 
-            <li className="flex items-center">
-              <input type="text" id="simple-search" className="bg-gray-50 border border-sky-300 text-sky-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 
-             bg-white-700 border-sky-600 placeholder-sky-400 text-white focus:ring-sky-500 focus:border-sky-500" value={search} onChange={(e) => { setSearch(e.target.value) }} placeholder="Search" required />
-              <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 bg-sky-600
-             hover:bg-sky-700 focus:ring-sky-800" onClick={handleSearch}>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                <span className="sr-only">Search</span>
-              </button>
-            </li>
+
           </ul>
-          </div>
-   
+        </div>
+ 
+
+      
       </header>
+     
     </div>
   );
 }

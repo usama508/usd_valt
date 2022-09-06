@@ -5,15 +5,58 @@ import Table from "../Components/Table";
 import Card from "../Components/Card";
 import ScrollToTop from "../Components/ScrollToTop";
 import Swipper from "../Components/Swipper";
+import { useState, useEffect } from "react";
 
 
 
 export default function Home({data}) {
 
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+  
+    useEffect(() => {
+      // only execute all the code below in client side
+      if (typeof window !== 'undefined') {
+        // Handler to call on window resize
+        function handleResize() {
+          // Set window width/height to state
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        }
+      
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+       
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+      
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+  }
+
+  const size = useWindowSize();
+
+  //setting the width props
+  let w=4
+  console.log(size.width)
+  if(size.width<=640){
+    w=1
+  }
+
   return (
     <div className="z-0">
-      <div className="mt-6">
-        <Swipper/>
+      <div className="mt-6 ml-20 lg:ml-16 ">
+        <Swipper w={w}/>
         
         </div>
       

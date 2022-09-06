@@ -5,20 +5,27 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import SwiperCore,{Autoplay} from 'swiper'
-import { delay } from 'lodash';
 
 
-function Swipper() {
+
+function Swipper({w}) {
     SwiperCore.use([Autoplay])
   return (
-    <Swiper
-    spaceBetween={10}
     
-    slidesPerView={4}
+    
+   
+    <Swiper
+    spaceBetween={3}
+    className=""
+  
+    
+    slidesPerView={w}
     loop={true}
      autoplay={{
-        delay:2000
+        delay:2000,
+        
      }
+
 
      }
   >
