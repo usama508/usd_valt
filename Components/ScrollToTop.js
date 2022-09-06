@@ -27,13 +27,14 @@ function ScrollToTop() {
                     <button style={{
                         position: "fixed",
                         bottom: "50px",
-                        right:"50px",
+                        right:"25px",
                         height: "50px",
                         width: "50px",
                         fontSize: "50px",
+                        color: 'white'
                     }}
                     onClick={scrollUp}>
-                    ^
+                    <ion-icon name="chevron-up-circle"></ion-icon>
                     
                        
                     </button>
