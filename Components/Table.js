@@ -1,9 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import {useEffect,useState} from 'react'
+import Chart from "../Components/Chart";
+
 
 
 function Table({ data }) {
+
 
   return (
     <>
@@ -54,30 +58,31 @@ function Table({ data }) {
               <tbody>
                 {
                   data.map(bit => {
-                    return (
-                      <>
+                    return ( <>
+                   
                         <tr >
-                          <th className="py-4 px-6">
+                          <th className="py-4 px-6 flex flex-col space-y-2 ">
                             {bit.market_cap_rank}
 
                           </th>
-                          <th scope="row" className="py-4 px-6 font-medium whitespace-nowrap">
+                          <th scope="row" className="py-4 px-6 font-medium whitespace-nowrap ">
                             <div className="flex" >
                               <img width={22} src={bit.image} />
                               {bit.name}
                             </div>
                           </th>
-                          <td className="py-4 px-6">${bit.current_price.toLocaleString()}</td>
-                          <td className="py-4 px-6">${bit.market_cap.toLocaleString()}</td>
-                          <td className="py-4 px-6">${bit.total_volume.toLocaleString()}</td>
-                          <td className="py-4 px-6">${bit.circulating_supply.toLocaleString()}{" "}<span className="font-medium">{bit.symbol.toUpperCase()}</span></td>
-                          <td className="py-4 px-6">graph</td>
+                          <td className="py-4 px-6 ">${bit.current_price.toLocaleString()}</td>
+                          <td className="py-4 px-6 ">${bit.market_cap.toLocaleString()}</td>
+                          <td className="py-4 px-6 ">${bit.total_volume.toLocaleString()}</td>
+                          <td className="py-4 px-6 ">${bit.circulating_supply.toLocaleString()}{" "}<span className="font-medium">{bit.symbol.toUpperCase()}</span></td>
+                          <td className="py-4 px-6 "><Chart/></td>
 
                         </tr>
 
 
 
-                      </>
+                      
+                     </>
                     )
                   })
                 }

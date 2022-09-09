@@ -2,10 +2,12 @@ import Head from "next/head";
 
 
 import Table from "../Components/Table";
-import Card from "../Components/Card";
+
 import ScrollToTop from "../Components/ScrollToTop";
 import Swipper from "../Components/Swipper";
 import { useState, useEffect } from "react";
+import Container from "../Components/Container";
+
 
 
 
@@ -55,6 +57,10 @@ export default function Home({data}) {
 
   return (
     <div className="z-0">
+     
+      
+
+      
       <div className="mt-6 ml-20 lg:ml-16 ">
         <Swipper w={w}/>
         
@@ -63,16 +69,8 @@ export default function Home({data}) {
       
       
 
-      <div className="m-4 ">
-        <div className="md:flex  space-x-0.5 mb-3">
-          <Card />
-          <Card />
-          <Card />
-        </div>
-        <div className="md:flex space-x-0.5">
-          <Card />
-          <Card />
-        </div>
+      <div className="m-4">
+        <Container/>
       </div>
 
       <div className="m-4">
