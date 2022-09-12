@@ -31,7 +31,7 @@ const [open,setOpen] =useState(false)
               className="flex items-center p-2"
             >
 
-              <p className="ml-2 text-xl font-semibold">USD_Valt</p>
+              <p className="ml-2 text-2xl font-semibold">USD_Valt</p>
             </a>
 
           </Link>

@@ -7,6 +7,7 @@ import ScrollToTop from "../Components/ScrollToTop";
 import Swipper from "../Components/Swipper";
 import { useState, useEffect } from "react";
 import Container from "../Components/Container";
+import LatestData from '../Components/LatestData'
 
 
 
@@ -57,7 +58,10 @@ export default function Home({data}) {
 
   return (
     <div className="z-0">
-     
+     <div className="m-4">
+          <LatestData/>
+
+        </div>
       
 
       
@@ -65,11 +69,16 @@ export default function Home({data}) {
         <Swipper w={w}/>
         
         </div>
+
+        
       
-      
+      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
+        <h2>Top Movers🔥</h2>
+      </div>
       
 
       <div className="m-4">
+      
         <Container/>
       </div>
 

@@ -6,21 +6,24 @@ import { MdDone } from 'react-icons/md';
 import { MdEco } from 'react-icons/md';
 import { AiFillLock } from 'react-icons/ai';
 
-const Style ="text-white text-xs"
+const Style = "text-white text-xs"
 
-const arrayIcon =[<MdAllOut fontSize="small" className={Style}/>,<MdDone fontSize="small" className={Style}/>,
-                  <MdEco fontSize="small" className={Style}/>,<AiFillLock fontSize="small" className={Style}/>]
-const Color =["from-indigo-500 to-blue-500", "from-blue-400 to-blue-300", "from-sky-500 to-sky-400", "from-cyan-600 to-cyan-500"]
+const arrayIcon = [<MdAllOut fontSize="small" className={Style} />, <MdDone fontSize="small" className={Style} />,
+<MdEco fontSize="small" className={Style} />, <AiFillLock fontSize="small" className={Style} />]
+const Color = ["from-indigo-500 to-blue-500", "from-blue-400 to-blue-300", "from-sky-500 to-sky-400", "from-cyan-600 to-cyan-500"]
 
 
 
 
 function Card(props) {
   var balance = props.balance
-  balance=balance * 9.5;
+  balance = balance * 9.5;
 
-  return(
-    <div className={`transform hover:scale-110 cursor-pointer transition delay-100 w-3/12 p-2 py-4 shadow-xl border rounded-xl
+  return (
+    <>
+
+
+        <div className={`transform hover:scale-110 cursor-pointer transition delay-100 w-3/12 p-2 py-4 shadow-xl border rounded-xl
                     bg-gradient-to-r ${Color[props.icon]}`}>
           <div className="flex justify-between">
             <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-xl m-1 bg-opacity-30">
@@ -41,15 +44,17 @@ function Card(props) {
             ${balance}
 
           </p>
-      
 
 
 
-    </div>
+
+        </div>
+     
+    </>
   )
 
 }
 
-  
+
 
 export default Card;

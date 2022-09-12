@@ -11,7 +11,7 @@ import { FaGithub } from 'react-icons/fa'
 
 function Contact() {
   return (
-    <div className='bg-sky-800 w-screen h-auto md:h-screen'>
+    <div className='bg-sky-800 w-screen h-auto md:h-screen '>
       <div className='flex justify-around items-center mx-20 md:flex-row flex-col'>
         <div className='md:w-1/2 w-full md:p-10 my-10 md:my-0 flex-col'>
           <h1 className='text-4xl font-semibold text-white'>Get In Touch</h1>

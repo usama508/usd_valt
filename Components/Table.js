@@ -27,7 +27,7 @@ function Table({ data }) {
           `}</style>
       <div>
         <div className="container p-2 mx-auto rounded-md sm:p-4 text-sky-100 bg-sky-900">
-          <h2 className="mb-3 text-2xl font-semibold leading-tight">Standings</h2>
+          <h2 className="mb-3 text-2xl font-semibold leading-tight">Today's Cryptocurrency Prices </h2>
           <div className="overflow-x-auto relative">
             <table className="w-full text-sm text-left">
               <thead className="rounded-t-lg bg-sky-700 text-left ">

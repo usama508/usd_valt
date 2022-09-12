@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Head from 'next/head'
+import  Action from '../Components/Action'
 
 
 function Layout({children}) {
@@ -19,6 +20,7 @@ function Layout({children}) {
             {children}
 
         </main>
+        <Action/>
         <Footer/>
     </div>
   )
