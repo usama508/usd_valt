@@ -19,7 +19,7 @@ function Table({ data }) {
       background: rgb(12 74 110)
     }
     table tbody tr:hover > th{
-      background: #4496d0
+      background:  #00CCFF
    
       
 
@@ -60,7 +60,7 @@ function Table({ data }) {
                   data.map(bit => {
                     return ( <>
                    
-                        <tr >
+                        <tr className='hover:bg-sky-300 hover:text-black' >
                           <th className="py-4 px-6 flex flex-col space-y-2 ">
                             {bit.market_cap_rank}
 

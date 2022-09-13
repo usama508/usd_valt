@@ -1,98 +1,191 @@
 import Link from "next/link";
-import React from "react";
-import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { list } from "postcss";
+import { useState } from "react";
+
+
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 
 
 
 function Navbar() {
+  const [dropDown, setDropDown] = useState(false);
+  const [nav, setNav] = useState(false);
 
 
-
-  
-  
-        
-const [open,setOpen] =useState(false)
-
+  const displayNav = () => {
+    setNav(!nav);
+  };
 
 
 
   return (
-    <div className="sticky top-0 z-10">
-      <header className="p-5 bg-sky-900 shadow text-sky-100 md:flex md:items-center md:justify-between">
-        <div className="container w-full flex justify-between h-8 mx-auto ">
+    <>
+      <nav
+        className='relative z-50 bg-sky-900 border-sky-200 px-2 sm:px-4 py-2.5 drop-shadow-md '>
+
+
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              aria-label="Back to homepage"
-              className="flex items-center p-2"
-            >
+            <a>
+              <div className="flex flex-row">
 
-              <p className="ml-2 text-2xl font-semibold">USD_Valt</p>
+                <span
+                  className='self-center text-2xl leading-10 text-white font-semibold whitespace-nowrap font-pacifico tracking-wider'
+
+                >
+                  USD_VALT
+                </span>
+              </div>
             </a>
-
           </Link>
-          <div onClick={()=>setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden ">
-          
 
-            <ion-icon  name={open ? 'close' : 'menu'}></ion-icon>
-          
+
+
+          {nav === false ? (
+            <span
+              className='border md:border-0 rounded p-1'
+
+            >
+              <GiHamburgerMenu
+                className='md:hidden cursor-pointer'
+
+                onClick={displayNav}
+                size={20}
+              />
+            </span>
+          ) : (
+            <AiFillCloseCircle
+              onClick={displayNav}
+              size={20}
+              className='drop-shadow cursor-pointer'
+
+            />
+          )}
+
+
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+              className='
+              flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0 '
+            >
+              <li>
+                <span
+                  onMouseOver={() => {
+                    setDropDown(true);
+                  }}
+                  onMouseLeave={() => {
+                    setDropDown(false);
+                  }}
+                >
+                  <a
+                    href="#"
+                    className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600'
+
+                  >
+                    Coins
+                  </a>
+
+                  {dropDown && (
+                    <div className=" absolute top-14 right-30 bg-sky-100  rounded-md p-5 w-1/4 z-50">
+                      <div className="  transform w-9 h-6 absolute -mt-1 top-0 rounded-sm  right-64 rotate-45 "></div>
+                      <ul className=''>
+                        <Link href={"/category"}>
+                          <a>
+                            <li className="text-base  flex  pb-2 pt-1">
+
+                              All Categories
+                            </li>
+                          </a>
+                        </Link>
+                        <Link href={"/gainers"}>
+                          <a>
+                            <li className="text-base flex pb-2">
+
+                            Top Gainers
+                            </li>
+                          </a>
+                        </Link>
+                        <li className="text-base flex pb-2 ">
+
+                        <Link href={"/losers"}>
+                          <a>
+                            <li className="text-base flex pb-2">
+
+                            Top Losers
+                            </li>
+                          </a>
+                        </Link>
+                        </li>
+
+                        <li>
+                        <Link href={"/add"}>
+                          <a>
+                            <li className="text-base flex pb-2">
+
+                            Recently Added
+                            </li>
+                          </a>
+                        </Link>
+                        </li>
+                        <li>
+                           <Link href={"/trending"}>
+                          <a>
+                            <li className="text-base flex pb-2">
+
+                            Trending
+                            </li>
+                          </a>
+                        </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </span>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+
+                >
+                  NFT
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+
+                >
+                  Resources
+                </a>
+              </li>
+              
+              <li>
+                <a
+                  href="#"
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+
+                >
+                  Learn
+                </a>
+              </li>
+
+            </ul>
+
+
+            <div
+              className={`h-screen 
+                  ${nav === true ? "block" : "hidden"}`}
+            >
+           
+             
+            </div>
           </div>
-          <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute  md:static md:z-auto z-[-1]  bg-sky-900 w-full left-0 md:w-auto
-                md:pl-0 pl-9  transition-all ease-in duration-500 ${open ? 'top-20':'top-[-490px]'}`} >
-            <li className="md:ml-8 text-xl md:my-0 my-7">
-              <Link href="/contact">
-                <a
-                  rel="noopener noreferrer"
-                  href=""
-                  className="text-xl hover:text-sky-500 duration-500"
-                >
-                  Contact
-                </a>
-              </Link>
-            </li>
-            <li className="md:ml-8 text-xl md:my-0 my-7">
-              <Link href="/about">
-                <a
-                  rel="noopener noreferrer"
-                  href=""
-                  className="text-xl hover:text-sky-500 duration-500"
-                >
-                  About us
-                </a>
-              </Link>
-            </li>
-            <li className="md:ml-8 text-xl md:my-0 my-7"><Link href='/signup'><a rel="noopener noreferrer"
-              href=""
-              className="text-xl hover:text-sky-500 duration-500"
-            >
-              SignUp</a>
-            </Link>
-            </li>
-
-            <li className="md:ml-8 text-xl md:my-0 my-7"><Link href='/login'><a
-              rel="noopener noreferrer"
-              href=""
-              className="text-xl hover:text-sky-500 duration-500"
-            >
-              Login
-            </a>
-            </Link>
-            </li>
-
-
-          </ul>
         </div>
- 
-
-      
-      </header>
-     
-    </div>
+      </nav>
+    </>
   );
-}
-
+};
 export default Navbar;
