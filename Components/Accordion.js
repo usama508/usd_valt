@@ -18,7 +18,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
             <AccordionItem >
                 <AccordionItemHeading >
                     <AccordionItemButton>
-                       <span className='font-bold p-0'>Coins</span>
+                       <span className='font-bold  p-0'>Coins</span>
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className='py-0 px-5 ' >
@@ -34,7 +34,7 @@ import 'react-accessible-accordion/dist/fancy-example.css';
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    <span className='font-bold p-0 '>NFT</span>
+                    <span className='font-bold  p-0 '>NFT</span>
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className='py-0 px-5'>

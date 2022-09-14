@@ -19,30 +19,30 @@ function Contact() {
 
             Fill up the form and our Team will get back to you within 12 hours.</p>
           <div className='flex-col my-20 gap-5 flex'>
-            <div className='flex gap-5 p-4 border border-gray-500 hover:border-blue-700 md:w-1/2 w-full 
+            <div className='flex gap-5 p-4 border border-white hover:border-sky-700 md:w-1/2 w-full 
                    rounded-lg group cursor-pointer items-center'>
-              <BsTelephoneFill className='text-xl text-white group-hover:text-gray-400' />
-              <p className='text-white text-base font-semibold group-hover:text-gray-400'>
+              <BsTelephoneFill className='text-xl text-white group-hover:text-sky-400' />
+              <p className='text-white text-base font-semibold group-hover:text-sky-400'>
                 +92-0123456789
 
               </p>
 
             </div>
 
-            <div className='flex gap-5 p-4 border border-gray-500 hover:border-blue-700 md:w-1/2 w-full 
+            <div className='flex gap-5 p-4 border border-white hover:border-sky-700 md:w-1/2 w-full 
                    rounded-lg group cursor-pointer items-center'>
-              <GrMail className='text-xl text-white group-hover:text-gray-400' />
-              <p className='text-white text-base font-semibold group-hover:text-gray-400'>
+              <GrMail className='text-xl text-white group-hover:text-sky-400' />
+              <p className='text-white text-base font-semibold group-hover:text-sky-400'>
                 info@abc.com
 
               </p>
 
             </div>
 
-            <div className='flex gap-5 p-4 border border-gray-500 hover:border-blue-700 md:w-1/2 w-full 
+            <div className='flex gap-5 p-4 border border-white hover:border-sky-700 md:w-1/2 w-full 
                    rounded-lg group cursor-pointer items-center'>
-              <HiLocationMarker className='text-xl text-white group-hover:text-gray-400' />
-              <p className='text-white text-base font-semibold group-hover:text-gray-400'>
+              <HiLocationMarker className='text-xl text-white group-hover:text-sky-400' />
+              <p className='text-white text-base font-semibold group-hover:text-sky-400'>
                 High St,Lahore
 
               </p>
@@ -51,11 +51,11 @@ function Contact() {
 
           </div>
           <div className='flex gap-8 justify-center md:justify-start'>
-            <FaInstagram className='text-2xl text-white hover:text-gray-400 cursor-pointer' />
-            <FaTwitter className='text-2xl text-white hover:text-gray-400 cursor-pointer' />
-            <FaYoutube className='text-2xl text-white hover:text-gray-400 cursor-pointer' />
-            <FaPinterest className='text-2xl text-white hover:text-gray-400 cursor-pointer' />
-            <FaGithub className='text-2xl text-white hover:text-gray-400 cursor-pointer' />
+            <FaInstagram className='text-2xl text-white hover:text-sky-400 cursor-pointer' />
+            <FaTwitter className='text-2xl text-white hover:text-sky-400 cursor-pointer' />
+            <FaYoutube className='text-2xl text-white hover:text-sky-400 cursor-pointer' />
+            <FaPinterest className='text-2xl text-white hover:text-sky-400 cursor-pointer' />
+            <FaGithub className='text-2xl text-white hover:text-sky-400 cursor-pointer' />
           </div>
 
         </div>
@@ -67,7 +67,7 @@ function Contact() {
                 id='firstName'
                 className='form-control block w-full px-3 py-2 text-base font-normal
                  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md  transition ease-in-out m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                  focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none'
                 placeholder='First Name'
                 required={true} />
 
@@ -76,7 +76,7 @@ function Contact() {
                 id='lastName'
                 className='form-control block w-full px-3 py-2 text-base font-normal
                  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md  transition ease-in-out m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                  focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none'
                 placeholder='Last Name'
                 required="" />
 
@@ -86,7 +86,7 @@ function Contact() {
               id='email'
               className='form-control block w-full px-3 py-2 text-base font-normal
                  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md  transition ease-in-out m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                  focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none'
               placeholder='Email'
               required={true} /><br/>
 
@@ -95,7 +95,7 @@ function Contact() {
               id='subject'
               className='form-control block w-full px-3 py-2 text-base font-normal
                  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md  transition ease-in-out m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                  focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none'
               placeholder='Subject'
               required={true}/><br/>
               <div className='flex justify-center'>
@@ -104,7 +104,7 @@ function Contact() {
                       id='text_area'
                       className='form-control block w-full px-3 py-2 text-base font-normal
                        text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md  transition ease-in-out m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
+                        focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none'
                       placeholder='Your Message'
                       required={true} />
 
