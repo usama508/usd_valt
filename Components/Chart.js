@@ -1,100 +1,65 @@
-import React from 'react'
-import {useEffect,useState} from 'react'
-import {Chart as ChartJS, LineElement, CategoryScale, LinearScale,PointElement} from 'chart.js'
-import {Line} from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
+import Chart from 'chart.js/auto'
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    LineElement,
-    PointElement
-    
-)
-//https://api.coinranking.com/v2/coins/?limit=10
-function Chart() {
-   const [chart, setChart] = useState([])
+const randomPoints = [
+    [65, 59, 100, 80, 10, 56, 72, 45, 67, 55, 42],
+    [10, 50, 30, 84, 38, 90, 42, 77, 100, 0, 100],
+    [0, 59, 100, 80, 10, 56, 100, 0, 26, 23, 32],
+    [100, 42, 77, 100, 0, 100, 72, 45, 67, 55, 42],
+    [0, 100, 47, 19, 90, 34, 25, 65, 78, 0, 32],
+]
 
-     const baseUrl=" https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
-     const proxyUrl='https://cors-anywhere.herokuapp.com/'
-     const apikey = "coinranking06c7087acd99a164d60c206dd7dee2fdefb3be281ce49833"
-
-     useEffect(()=>{
-        const fetchCoins = async () =>{
-            await fetch(`${proxyUrl}${baseUrl}`,{
-                method:'GET',
-                headers:{
-                    'Content-Type': 'application/json',
-                    'x-access-token': `${apikey}`,
-                    'Access-Control-Allow-Origin':'*'
-                }
-            }).then((response)=>{
-                response.json().then((json)=>{
-                    console.log(json) 
-                })
-               
-            }).catch(error=>{
-                console.log(error);
-            })
-          
-        }
-        fetchCoins()
-        
-     },[baseUrl,proxyUrl,apikey])
-
-    console.log('chart', chart)
-    const data= {
-       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of votes',
-           data: [12,19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    }
-
-    const options= {
-        maintainAspectRatio:false,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
-    legend:{
-        labels:{
-           fontSize:1
-        }
-    },
-    scales:{
-        y:{display:false}, x:{display:false}
-    }
-    }
-
-  return (
-    <div>
-        <Line
-        data={data}
-           
-           options={options}
-        
-        
-        />
-    </div>
-  )
+const getRandomPoints = () => {
+    const rndInt = Math.floor(Math.random() * 4) + 1
+    return randomPoints[rndInt]
 }
 
-export default Chart
+const data = {
+    labels: [
+        '6:04 PM',
+        '9:04 PM',
+        '3:04 PM',
+        '6:04 PM',
+        '9:04 AM',
+        '12:04 PM',
+        '3: 04 PM',
+    ],
+    datasets: [
+        {
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: 'red',
+            borderColor: '#3773f5',
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: '#3773f5',
+            pointBackgroundColor: '#3773f5',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#3773f5',
+            pointHoverBorderColor: '#3773f5',
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: getRandomPoints(),
+        },
+    ],
+}
+
+const options = {
+    plugins: {
+        legend: {
+            display: false,
+        },
+    },
+}
+
+const Graph = () => {
+    return (
+        <Line data={data} options={options} width={400} height={150} />
+    )
+}
+
+export default Graph
