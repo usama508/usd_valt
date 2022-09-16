@@ -45,6 +45,7 @@ const Latest = () => {
                 <span className='pl-4'>ETH&nbsp;Gas:&nbsp;</span>
                 <span className='text-sky-600'>8&nbsp;Gwei</span>
             </div>
+            
 
         </div>
     </div>

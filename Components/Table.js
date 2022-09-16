@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import  { useState } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "../styles/Table.module.css";
 import Link from 'next/link'
@@ -96,7 +96,7 @@ function Table({ data }) {
                     <div className="flex">
                       <img width={22} src={bit.image} />
                       <span className="ml-2 hover:text-sky-600 ">
-                        <b><Link href={`/coins/info?name=${bit.name}`}>{bit.name}</Link></b>
+                        <b><Link href={`/coins/${bit.name}`}>{bit.name}</Link></b>
                       </span>
                       <span className="text-sky-500 ml-1">
                         {bit.symbol.toUpperCase()}
@@ -119,7 +119,7 @@ function Table({ data }) {
                     </span>
                   </td>
                   <td className="py-4 px-6">
-                    {" "}
+                   
                     <img src={chart}></img>
                   </td>
                 </tr>
