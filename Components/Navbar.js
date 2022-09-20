@@ -1,8 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
+import SearchBar from './SearchBar'
+
+
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle } from "react-icons/ai";
+
 
 import Accordion from "./Accordion";
 
@@ -10,27 +16,32 @@ import Accordion from "./Accordion";
 const Navbar = () => {
   const [dropDown, setDropDown] = useState(false);
   const [nav, setNav] = useState(false);
+  const [search, setSearch] = useState(false)
 
 
   const display = () => {
     setNav(!nav);
   };
 
+  
+ 
+
+
 
 
   return (
     <>
       <nav
-        className=' z-50 sticky top-0 border-sky-200 bg-sky-900 px-2 sm:px-4 py-2.5 drop-shadow-md'
+        className=' relative z-50 bg-sky-900 px-2 sm:px-4 py-2.5 drop-shadow-md  '
 
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
             <a>
               <div className="flex flex-row">
-               
+
                 <span
-                  className='self-center text-2xl text-white leading-10 font-semibold whitespace-nowrap font-pacifico tracking-wider'>
+                  className='self-center text-2xl flex justify-center items-center mr-1 text-white leading-10 font-semibold whitespace-nowrap font-pacifico tracking-wider'>
                   USD_VALT
                 </span>
               </div>
@@ -41,7 +52,7 @@ const Navbar = () => {
 
           {nav === false ? (
             <span
-              className='border border-black md:border-0 rounded p-1'
+              className=' border border-black md:border-0 rounded p-1'
 
             >
               <GiHamburgerMenu
@@ -65,7 +76,7 @@ const Navbar = () => {
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
               className=
-              'flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0 '
+              ' flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0  '
             >
 
 
@@ -80,7 +91,7 @@ const Navbar = () => {
                 >
                   <a
                     href="#"
-                    className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600'
+                    className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600 '
 
                   >
                     Coins
@@ -93,6 +104,7 @@ const Navbar = () => {
                         <Link href={"/category"}>
                           <a>
                             <li className="text-base  flex pb-2 pt-1">
+                            
 
                               All Categories
                             </li>
@@ -118,6 +130,7 @@ const Navbar = () => {
                         <Link href={"/add"}>
                           <a>
                             <li className="text-base flex pb-2">
+                           
 
                               Recently Added
                             </li>
@@ -125,8 +138,9 @@ const Navbar = () => {
                         </Link>
                         <Link href={"/trending"}>
                           <a>
-                            <li className="text-base flex pb-2">
 
+                            <li className="text-base flex pb-2" >
+                            
                               Trending
                             </li>
                           </a>
@@ -149,7 +163,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600'
+                  className='block py-2 pr-4 pl-3  text-white rounded md:p-0 hover:text-sky-600'
 
                 >
                   Resources
@@ -159,22 +173,37 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className='block py-2 pr-4 pl-3 text-white rounded md:p-0  hover:text-sky-600'
+                  className='block py-2 pr-4 pl-3   text-white rounded md:p-0  hover:text-sky-600'
 
                 >
                   Learn
                 </a>
               </li>
 
-
-
-
-
+              <li className=" rounded-full p-3 -mt-2">
+              <SearchBar />
+              </li>
             </ul>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
+
         </div>
       </nav>
 

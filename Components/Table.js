@@ -1,22 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import  { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "../styles/Table.module.css";
 import Link from 'next/link'
-function Table({ data }) {
 
-  const chart ='https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/52.svg'
+function Table({  filteredCoins }) {
+
+  const Chart ='https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/52.svg'
 
 
-  const [user, setUser] = useState(data.slice(0, 100));
+  const [users, setUsers] = useState(filteredCoins.slice(0, 100));
   const [pageNumber, setPageNumber] = useState(0);
-  const userPerPage = 10;
-  const pageVisit = pageNumber * userPerPage;
-  const pageCount = Math.ceil(user.length / userPerPage);
+  const usersPerPage = 10;
+  const pagesVisited = pageNumber * usersPerPage;
+  const pageCount = Math.ceil(users.length / usersPerPage);
 
-  const changePage = ({ select }) => {
-    setPageNumber(select);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
   };
 
   return (
@@ -25,7 +26,7 @@ function Table({ data }) {
         table thead #table-head-name{
           position: sticky;
           left: 0;
-          background: rgb(12 74 110);
+         background: rgb(12 74 110);
         }
         table tbody th {
           position: sticky;
@@ -34,24 +35,21 @@ function Table({ data }) {
           background: rgb(12 74 110);
         }
         table tbody tr:hover > th {
-          background: rgb(125 211 252);
+          background: rgb(125 211 252)
         }
       `}</style>
       
-      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
-        <h2>Today's Cryptocurrency Prices</h2>
-      </div>
-      <div className="overflow-x-auto rounded-lg bg-sky-900 relative">
+      <div className="overflow-x-auto bg-sky-900 relative">
         <table className="w-full text-sm text-left text-white ">
           <thead 
-            className='text-xs uppercase border-b border-t border-gray-300'
+            className='text-xs uppercase border-b border-t border-sky-300'
               
           >
             <tr>
               <th scope="col" className="py-3 px-6">
                 #
               </th>
-              <th scope="col" className="py-3 px-6 " id="table-head-name">
+              <th scope="col" className="py-3 px-6" id="table-head-name">
                 Name
               </th>
               <th scope="col" className="py-3 px-6">
@@ -73,54 +71,53 @@ function Table({ data }) {
           </thead>
 
           <tbody>
-            {data
-              .slice(pageVisit, pageVisit + userPerPage)
-              .map((bit) => (
+            {filteredCoins
+              .slice(pagesVisited, pagesVisited + usersPerPage)
+              .map((coin) => (
                 <tr
-                  key={bit.id}
+                  key={coin.id}
                   className='border-b hover:bg-sky-300 hover:text-black '
-                  
-                   
+                    
                 >
                   <th
                     className='py-4 px-6'
-                      
+                     
                   >
-                    {bit.market_cap_rank}
+                    {coin.market_cap_rank}
                   </th>
                   <th
                     scope="row"
                     className='py-4 px-6 font-medium  whitespace-nowrap'
-                    
+                     
                   >
                     <div className="flex">
-                      <img width={22} src={bit.image} />
-                      <span className="ml-2 hover:text-sky-600 ">
-                        <b><Link href={`/coins/${bit.name}`}>{bit.name}</Link></b>
+                      <img width={22} src={coin.image} />
+                      <span className="ml-2 hover:text-sky-600">
+                        <b><Link href={`/coins/${coin.id}`}>{coin.name}</Link></b>
                       </span>
                       <span className="text-sky-500 ml-1">
-                        {bit.symbol.toUpperCase()}
+                        {coin.symbol.toUpperCase()}
                       </span>
                     </div>
                   </th>
                   <td className="py-4 px-6">
-                    <b>${bit.current_price.toLocaleString()}</b>
+                    <b>${coin.current_price.toLocaleString()}</b>
                   </td>
                   <td className="py-4 px-6">
-                    ${bit.market_cap.toLocaleString()}
+                    ${coin.market_cap.toLocaleString()}
                   </td>
                   <td className="py-4 px-6">
-                    ${bit.total_volume.toLocaleString()}
+                    ${coin.total_volume.toLocaleString()}
                   </td>
                   <td className="py-4 px-6 text-center">
-                    {bit.circulating_supply.toLocaleString()}{" "}
+                    {coin.circulating_supply.toLocaleString()}{" "}
                     <span className="font-medium">
-                      {bit.symbol.toUpperCase()}
+                      {coin.symbol.toUpperCase()}
                     </span>
                   </td>
                   <td className="py-4 px-6">
-                   
-                    <img src={chart}></img>
+                    {" "}
+                    <img src={Chart}></img>
                   </td>
                 </tr>
               ))}
@@ -134,8 +131,8 @@ function Table({ data }) {
          
       >
         <ReactPaginate 
-          previousLabel={"Prev"}
-          nextLabel={"Next"}
+          previousLabel="<<"
+          nextLabel=">>"
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={styles.paginationBttns}

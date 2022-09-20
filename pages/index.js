@@ -12,7 +12,7 @@ import LatestData from '../Components/LatestData'
 
 
 
-export default function Home({data}) {
+export default function Home({ filteredCoins }) {
 
   function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match
@@ -83,7 +83,7 @@ export default function Home({data}) {
       </div>
 
       <div className="m-4">
-        <Table data={data} />
+        <Table  filteredCoins={ filteredCoins }  />
       </div>
       <div>
         <ScrollToTop/>
@@ -92,15 +92,15 @@ export default function Home({data}) {
     </div>
   );
 }
-
 export async function getServerSideProps(){
   const response = await fetch(
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false")
-  const data = await response.json()
+  const  filteredCoins  = await response.json()
   return{
     props:{
-      data
+      filteredCoins,
     }
   }
 
 }
+

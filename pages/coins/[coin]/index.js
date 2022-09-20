@@ -4,7 +4,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
-import Chart from '../../Components/Chart'
+import Chart from '../../../Components/Chart'
 
 
 
@@ -102,13 +102,3 @@ function info() {
   )
 }
 export default info
-
-
-
-
-
-
-
-
-
-
