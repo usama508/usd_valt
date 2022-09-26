@@ -83,6 +83,9 @@ export default function Home({ filteredCoins }) {
       </div>
 
       <div className="m-4">
+      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
+        <h2>Today's Cryptocurrency Prices</h2>
+      </div>
         <Table  filteredCoins={ filteredCoins }  />
       </div>
       <div>

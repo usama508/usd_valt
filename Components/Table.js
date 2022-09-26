@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "../styles/Table.module.css";
 import Link from 'next/link'
+import {AiFillCaretDown} from 'react-icons/ai';
+import {AiFillCaretUp} from 'react-icons/ai'
 
 function Table({  filteredCoins }) {
 
@@ -52,8 +54,11 @@ function Table({  filteredCoins }) {
               <th scope="col" className="py-3 px-6" id="table-head-name">
                 Name
               </th>
-              <th scope="col" className="py-3 px-6">
+              <th scope="col" className="py-3 px-6 ">
                 Price
+              </th>
+              <th scope="col" className="py-3 px-6 text-center">
+                24H
               </th>
               <th scope="col" className="py-3 px-6">
                 Market Cap
@@ -103,6 +108,12 @@ function Table({  filteredCoins }) {
                   <td className="py-4 px-6">
                     <b>${coin.current_price.toLocaleString()}</b>
                   </td>
+                  {coin.price_change_percentage_24h>0 && <td className="flex mt-4 text-green-400 py-4 px-6">
+                    <AiFillCaretUp className="mt-1 mr-1"/>{coin.price_change_percentage_24h.toFixed(2)}%
+                  </td>}
+                  {coin.price_change_percentage_24h<0 && <td className="flex mt-4 text-red-400 py-4 px-6">
+                   <AiFillCaretDown className="mt-1 mr-1" />{coin.price_change_percentage_24h.toFixed(2)}%
+                  </td>}
                   <td className="py-4 px-6">
                     ${coin.market_cap.toLocaleString()}
                   </td>
@@ -115,7 +126,7 @@ function Table({  filteredCoins }) {
                       {coin.symbol.toUpperCase()}
                     </span>
                   </td>
-                  <td className="py-4 px-6">
+                  <td className="">
                     {" "}
                     <img src={Chart}></img>
                   </td>
