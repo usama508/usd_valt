@@ -22,7 +22,7 @@ const data = {
         '6:04 PM',
         '9:04 AM',
         '12:04 PM',
-        '3: 04 PM',
+        '3:04 PM',
     ],
     datasets: [
         {

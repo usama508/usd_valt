@@ -64,7 +64,7 @@ const SearchBar = () => {
               onFocus={handleFocus}
               onBlur={handleBlur}
               ref={ref}
-              onChange={getValue}
+            onChange={getValue}
             />
           </div>
         </div>
