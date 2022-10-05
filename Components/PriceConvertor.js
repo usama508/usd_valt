@@ -82,9 +82,11 @@ const PriceConvertor=({
 
 export default PriceConvertor*/}
 
-import Image from 'next/image'
+
+
 
 import {RiArrowLeftRightLine} from 'react-icons/ri'
+
 
 
 const styles = {
@@ -101,6 +103,7 @@ const CMCpriceConverter = ({
   toLogo,
   price,
 }) => {
+
  
 
  
@@ -143,6 +146,10 @@ const CMCpriceConverter = ({
         </div>
 
         <p className='text-3xl'>${price}</p>
+      </div>
+
+      <div className={styles.convertButton}>
+        Convert
       </div>
 
     

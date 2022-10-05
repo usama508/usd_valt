@@ -1,6 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
 
+
 function ScrollToTop() {
     const [backToTop,setBackToTop] = useState(false)
 
@@ -31,7 +32,7 @@ function ScrollToTop() {
                         height: "50px",
                         width: "50px",
                         fontSize: "50px",
-                        color: 'white'
+                        color: ' rgb(56 189 248)'
                     }}
                     onClick={scrollUp}>
                     <ion-icon name="chevron-up-circle"></ion-icon>

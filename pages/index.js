@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Head from "next/head";
 
 
@@ -8,11 +9,25 @@ import Swipper from "../Components/Swipper";
 import { useState, useEffect } from "react";
 import Container from "../Components/Container";
 import LatestData from '../Components/LatestData'
+import {useQuery} from 'react-query'
+import axios from "axios";
+import Search from '../Components/Search'
+
+const fetchCoins = ()=>{
+  return axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false")
+}
+
 
 
 
 
 export default function Home({ filteredCoins }) {
+  const { isLoading, data} = useQuery(
+    'coin',fetchCoins,
+    {
+      refetchInterval: 200000,
+    }
+  );
 
   function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match
@@ -56,6 +71,15 @@ export default function Home({ filteredCoins }) {
     w=1
   }
 
+const [search, setSearch] = useState('');
+const allCoins= filteredCoins.filter(coin=>
+  coin.name.toLowerCase().includes(search.toLowerCase())
+  )
+
+const handleChange = e =>{
+  e.preventDefault();
+  setSearch(e.target.value.toLowerCase());
+}
   return (
     <div className="z-0">
      <div className="m-4">
@@ -84,9 +108,10 @@ export default function Home({ filteredCoins }) {
 
       <div className="m-4">
       <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
-        <h2>Today's Cryptocurrency Prices</h2>
+        <h2>Today's Cryptocurrency Prices  <Search type='text' placeholder='search' onChange={handleChange}/></h2>
+       
       </div>
-        <Table  filteredCoins={ filteredCoins }  />
+        <Table  filteredCoins={ allCoins }  />
       </div>
       <div>
         <ScrollToTop/>
@@ -95,15 +120,17 @@ export default function Home({ filteredCoins }) {
     </div>
   );
 }
-export async function getServerSideProps(){
-  const response = await fetch(
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false")
-  const  filteredCoins  = await response.json()
-  return{
-    props:{
-      filteredCoins,
-    }
-  }
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false"
+  );
 
-}
+  const filteredCoins = await res.json();
+
+  return {
+    props: {
+      filteredCoins,
+    },
+  };
+};
 

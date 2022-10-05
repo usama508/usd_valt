@@ -65,9 +65,10 @@ const SearchBar = () => {
               onBlur={handleBlur}
               ref={ref}
             onChange={getValue}
+            required
             />
           </div>
-        </div>
+        </div></form>
         <OutsideClickHandler
           onOutsideClick={() => {
             
@@ -75,7 +76,7 @@ const SearchBar = () => {
           }}
         >
           <div
-            className={`${hide} absolute top-30 mt-1 drop-shadow bg-sky-300 w-96 px-10 py-3 rounded-md`}
+            className={` ${hide} absolute top-30 mt-1 drop-shadow bg-sky-300 w-96 px-10 py-3 rounded-md`}
           >
             {user
               .filter((val) => {
@@ -106,7 +107,7 @@ const SearchBar = () => {
           </div>
           </OutsideClickHandler>
 
-      </form></>
+      </>
   );
 }
 

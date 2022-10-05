@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
+import Navbar from './Navbar'
+import Footer from './Footer'
 import Head from 'next/head'
-import  Action from '../Components/Action'
+import  Action from './Action'
 
 
 function Layout({children}) {

@@ -5,14 +5,15 @@ import ReactPaginate from "react-paginate";
 import styles from "../styles/Table.module.css";
 import Link from 'next/link'
 import {AiFillCaretDown} from 'react-icons/ai';
-import {AiFillCaretUp} from 'react-icons/ai'
+import {AiFillCaretUp} from 'react-icons/ai';
+
 
 function Table({  filteredCoins }) {
 
   const Chart ='https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/52.svg'
 
-
-  const [users, setUsers] = useState(filteredCoins.slice(0, 100));
+ 
+  const [users, setUsers] = useState(filteredCoins.slice(0,100));
   const [pageNumber, setPageNumber] = useState(0);
   const usersPerPage = 10;
   const pagesVisited = pageNumber * usersPerPage;
@@ -21,6 +22,7 @@ function Table({  filteredCoins }) {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
 
   return (
     <>
@@ -42,6 +44,7 @@ function Table({  filteredCoins }) {
       `}</style>
       
       <div className="overflow-x-auto bg-sky-900 relative">
+        
         <table className="w-full text-sm text-left text-white ">
           <thead 
             className='text-xs uppercase border-b border-t border-sky-300'
@@ -159,3 +162,4 @@ function Table({  filteredCoins }) {
 }
 
 export default Table;
+

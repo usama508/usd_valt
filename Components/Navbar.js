@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
-import SearchBar from './SearchBar'
+
 
 
 
@@ -180,9 +180,7 @@ const Navbar = () => {
                 </a>
               </li>
 
-              <li className=" rounded-full p-3 -mt-2">
-              <SearchBar />
-              </li>
+             
             </ul>
 
 
