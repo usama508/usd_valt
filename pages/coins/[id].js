@@ -14,7 +14,7 @@ import PriceConvertor from '../../Components/PriceConvertor'
 const styles = {
   activeTab: 'p-1 px-2 mr-2 rounded-lg bg-sky-900',
   tabItem: 'px-2',
-  tabContainer: 'flex items-center p-2 rounded-xl bg-sky-900 border border-gray-100/10 text-sm',
+  tabContainer: 'flex items-center p-2 m-6 rounded-xl bg-sky-900 border border-gray-100/10 text-sm',
   info: 'text-white mx-auto max-w-screen-2xl',
   flexStart: 'flex items-start',
   flexBetween: 'flex justify-between',
@@ -100,11 +100,11 @@ function info({ coin }) {
         </ol>
       </nav>
 
-      <div className="flex justify-between">
-        <div className="flex items-center justify-start">
+      <div className="flex justify-between m-6">
+        <div className="flex items-center justify-start m-6">
 
           <div
-            className='flex mt-6'
+            className='flex mt-6 '
 
           >
             <span>
@@ -123,7 +123,7 @@ function info({ coin }) {
 
         </div>
 
-        <div className="flex pb-3">
+        <div className="flex pb-3 m-6">
           <div className="flex items-end mb-1 font-semibold text-2xl md:text-4xl">
             ${coin.market_data.current_price.usd.toLocaleString()}
           </div>
@@ -134,7 +134,7 @@ function info({ coin }) {
         </div>
       </div>
 
-      <div className="flex justify-between mt-1.5">
+      <div className="flex justify-between  m-6">
         <div className="flex">
           <div className="bg-sky-400 mr-2 rounded-md flex items-center justify-center p-1">
             Rank# {coin.market_cap_rank}
@@ -142,7 +142,7 @@ function info({ coin }) {
 
         </div>
 
-        <div className="w-1/6 ">
+        <div className="w-1/6  ">
           <div className="w-full rounded-full h-1.5 bg-sky-300">
             <div
               className="bg-sky-500 h-1.5 rounded-full"
@@ -162,9 +162,10 @@ function info({ coin }) {
 
 
 
-
+     
       <div className={styles.info}>
         <main className={styles.main}>
+          
           <div className={styles.flexStart}>
             <div className={styles.tabContainerWrapper}>
               <div className={styles.flexBetween}>
@@ -189,10 +190,12 @@ function info({ coin }) {
 
               </div>
               <br />
+              <div className='m-6'>
               <Chart />
+              </div>
               <br />
               <div className={styles.flexBetweenCenter}>
-                <div className='flex'>
+                <div className='flex m-6'>
                   <div className={` text-sky-900 ${styles.flexCenter}`}>
                     <input className='outline-none ' type='checkbox' /> &nbsp; USD
 
@@ -212,14 +215,32 @@ function info({ coin }) {
               </div>
               <br />
               <br />
-              <PriceConvertor
-                from={coinName}
-                fromSymbol={coinSymbol}
-                price={price}
-                to='United States Dollars'
-                toSymbol='USD'
-              />
 
+              
+
+               
+              <div className='m-6'>
+                <div className='text-xl md:text-3xl text-black font-bold mb-3 pt-3 ml-3'>
+                  <h1>{coin.name} to USD Convertor</h1>
+                  </div>
+                  
+                  <PriceConvertor
+                        from={coin.name}
+                        fromSymbol={coin.symbol}
+                        fromLogo={coin.image.small}
+                        price={coin.market_data.current_price.usd.toLocaleString()}
+                        to='United States Dollars'
+                        toSymbol='USD'
+                      />
+             
+                    </div>
+                      
+                      
+                     
+                   
+               
+              
+             
 
 
             </div>

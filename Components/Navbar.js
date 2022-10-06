@@ -98,8 +98,8 @@ const Navbar = () => {
                   </a>
 
                   {dropDown && (
-                    <div className=" absolute top-14 right-30 bg-sky-100  rounded-md p-5 w-1/4 z-50">
-                      <div className=" bg-sky-100 transform w-7 h-6 absolute -mt-1 top-0 rounded-sm  right-300 rotate-45 "></div>
+                    <div className=" absolute top-13 right-30 bg-sky-200  rounded-md p-5 w-1/4 z-50">
+                      <div className=" bg-sky-200 transform w-7 h-6 absolute -mt-1 top-0 rounded-sm  right-300 rotate-45 "></div>
                       <ul className="">
                         <Link href={"/category"}>
                           <a>

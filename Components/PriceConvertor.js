@@ -84,13 +84,14 @@ export default PriceConvertor*/}
 
 
 
-
+import React from 'react'
 import {RiArrowLeftRightLine} from 'react-icons/ri'
 
 
 
+
 const styles = {
-  converter: `flex items-center justify-between bg-[#171924] border border-gray-500/10 px-5 py-5 rounded-xl`,
+  converter: `flex items-center justify-between bg-sky-900 border border-gray-500/10 px-5 py-5 rounded-xl`,
   convertButton: `bg-[#1d4ed8] p-2 px-5 w-min rounded-xl mt-5 cursor-pointer hover:opacity-60`,
 }
 
@@ -118,10 +119,14 @@ const CMCpriceConverter = ({
         <div>
           <div className='flex'>
             <div className='avatar-container'>
-              {fromLogo && fromLogo ? coinIcon() : <div></div>}
+              <img src={fromLogo}/>
             </div>
             &nbsp; &nbsp;
+            
             <div>
+
+              
+             
               <p>{fromSymbol}</p>
               <h4>{from}</h4>
             </div>
@@ -129,9 +134,9 @@ const CMCpriceConverter = ({
         </div>
 
         <div className='flex'>
-          <p className='text-3xl'>1</p>
+          <p className='text-3xl' onChange={(e)=>e.target}>1</p>
           &nbsp;&nbsp;
-          <div>
+          <div className='mt-4'>
           <RiArrowLeftRightLine/>
           </div>
           &nbsp;&nbsp;
