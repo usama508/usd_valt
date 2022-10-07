@@ -3,8 +3,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { AiOutlineLink } from 'react-icons/ai'
-import { BiLinkExternal } from 'react-icons/bi'
+
 
 import Chart from '../../Components/Chart'
 import PriceConvertor from '../../Components/PriceConvertor'
@@ -12,15 +11,15 @@ import PriceConvertor from '../../Components/PriceConvertor'
 
 
 const styles = {
-  activeTab: 'p-1 px-2 mr-2 rounded-lg bg-sky-900',
-  tabItem: 'px-2',
-  tabContainer: 'flex items-center p-2 m-6 rounded-xl bg-sky-900 border border-gray-100/10 text-sm',
-  info: 'text-white mx-auto max-w-screen-2xl',
-  flexStart: 'flex items-start',
-  flexBetween: 'flex justify-between',
-  flexBetweenCenter: 'flex justify-between items-center',
-  tabContainerWrapper: 'p-10 pl-0 pr-0 w-2/3',
-  flexCenter: 'flex items-center'
+  activeTab: 'p-1 px-2 mr-2 rounded-lg  bg-sky-900',
+  tabItem: 'px-2 ',
+  tabContainer: 'flex items-center p-2 m-6  rounded-xl bg-sky-900 border border-gray-100/10 text-sm',
+  info: 'text-white mx-auto overflow-hidden max-w-screen-2xl ',
+  flexStart: 'flex  items-start',
+  flexBetween: 'flex  justify-between',
+  flexBetweenCenter: 'flex justify-between items-center ',
+  tabContainerWrapper: 'p-10 pl-0 pr-0 w-2/3 ',
+  flexCenter: 'flex  items-center'
 }
 
 function info({ coin }) {
@@ -31,6 +30,7 @@ function info({ coin }) {
   const [coinName, setCoinName] = useState('')
   const [coinSymbol, setCoinSymbol] = useState('')
   const [price, setPrice] = useState('')
+  
 
   useEffect(() => {
     getURLData()
@@ -46,7 +46,7 @@ function info({ coin }) {
   }
   return (
     <>
-      <nav className="flex" aria-label="Breadcrumb">
+      <nav className=" flex " aria-label="Breadcrumb">
         <ol className="inline-flex items-center space-x-1 md:space-x-3">
 
           <li>
@@ -100,7 +100,7 @@ function info({ coin }) {
         </ol>
       </nav>
 
-      <div className="flex justify-between m-6">
+      <div className="flex justify-between m-6 ">
         <div className="flex items-center justify-start m-6">
 
           <div
@@ -220,7 +220,7 @@ function info({ coin }) {
 
                
               <div className='m-6'>
-                <div className='text-xl md:text-3xl text-black font-bold mb-3 pt-3 ml-3'>
+                <div className='text-xl md:text-3xl  text-black font-bold mb-3 pt-3 ml-3'>
                   <h1>{coin.name} to USD Convertor</h1>
                   </div>
                   
@@ -228,7 +228,7 @@ function info({ coin }) {
                         from={coin.name}
                         fromSymbol={coin.symbol}
                         fromLogo={coin.image.small}
-                        price={coin.market_data.current_price.usd.toLocaleString()}
+                        price={coin.market_data.current_price.usd}
                         to='United States Dollars'
                         toSymbol='USD'
                       />

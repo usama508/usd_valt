@@ -86,6 +86,7 @@ export default PriceConvertor*/}
 
 import React from 'react'
 import {RiArrowLeftRightLine} from 'react-icons/ri'
+import {useState} from 'react'
 
 
 
@@ -104,6 +105,8 @@ const CMCpriceConverter = ({
   toLogo,
   price,
 }) => {
+  const [bitprice,setBitprice] = useState('')
+  console.log(bitprice * price)
 
  
 
@@ -134,28 +137,32 @@ const CMCpriceConverter = ({
         </div>
 
         <div className='flex'>
-          <p className='text-3xl' onChange={(e)=>e.target}>1</p>
-          &nbsp;&nbsp;
-          <div className='mt-4'>
+         <input className='text-right outline-none  bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
+            
+          </input>
+          
+           
+         
+         
+          &nbsp;&nbsp; 
+          <div className='mt-4 mr-7'>
           <RiArrowLeftRightLine/>
           </div>
           &nbsp;&nbsp;
           <div className='flex'>
             {toLogo}
             &nbsp; &nbsp;
-            <div>
+            <div className='flex'>
               <p>{toSymbol}</p>
               <h4>{to}</h4>
             </div>
           </div>
         </div>
 
-        <p className='text-3xl'>${price}</p>
+        <p className='text-3xl'>${bitprice * price}</p>
+       
       </div>
 
-      <div className={styles.convertButton}>
-        Convert
-      </div>
 
     
     </div>

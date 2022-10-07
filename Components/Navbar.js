@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className=' relative z-50 bg-sky-900 px-2 sm:px-4 py-2.5 drop-shadow-md  '
+        className='relative z-50  bg-sky-900 px-2 sm:px-4 py-2.5 drop-shadow-md  '
 
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
