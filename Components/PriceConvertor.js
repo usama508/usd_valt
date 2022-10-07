@@ -137,7 +137,7 @@ const CMCpriceConverter = ({
         </div>
 
         <div className='flex'>
-         <input className='text-right outline-none  bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
+         <input className='text-right outline-none justify-between bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
             
           </input>
           
@@ -145,14 +145,14 @@ const CMCpriceConverter = ({
          
          
           &nbsp;&nbsp; 
-          <div className='mt-4 mr-7'>
+          <div className=' flex mt-4 mr-3 ml-3'>
           <RiArrowLeftRightLine/>
           </div>
           &nbsp;&nbsp;
           <div className='flex'>
             {toLogo}
             &nbsp; &nbsp;
-            <div className='flex'>
+            <div >
               <p>{toSymbol}</p>
               <h4>{to}</h4>
             </div>
