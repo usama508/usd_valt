@@ -11,7 +11,9 @@ import Container from "../Components/Container";
 import LatestData from '../Components/LatestData'
 import {useQuery} from 'react-query'
 import axios from "axios";
-import Search from '../Components/Search'
+
+
+
 
 const fetchCoins = ()=>{
   return axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false")
@@ -76,10 +78,7 @@ const allCoins= filteredCoins.filter(coin=>
   coin.name.toLowerCase().includes(search.toLowerCase())
   )
 
-const handleChange = e =>{
-  e.preventDefault();
-  setSearch(e.target.value.toLowerCase());
-}
+
   return (
     <div className="z-0">
      <div className="m-4">
@@ -108,10 +107,11 @@ const handleChange = e =>{
 
       <div className="m-4">
       <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
-        <h2>Today's Cryptocurrency Prices  <Search type='text' placeholder='search' onChange={handleChange}/></h2>
+        <h2>Today's Cryptocurrency Prices  </h2>
        
       </div>
         <Table  filteredCoins={ allCoins }  />
+       
       </div>
       <div>
         <ScrollToTop/>

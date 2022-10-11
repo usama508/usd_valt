@@ -1,12 +1,13 @@
 import React from 'react'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
-function Skeleton({skl}) {
+function Skeletonpage({filteredCoins}) {
   return (
-    <div className='animate-pulse'>
-        <div className={`bg-gray-300 rounded-md ${skl}`}></div>
-
+    <div>
+      
     </div>
   )
 }
 
-export default Skeleton
+export default Skeletonpage

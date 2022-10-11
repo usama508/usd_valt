@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle } from "react-icons/ai";
+import SearchBar from "./SearchBar";
 
 
 import Accordion from "./Accordion";
@@ -21,6 +22,13 @@ const Navbar = () => {
 
   const display = () => {
     setNav(!nav);
+    if(count==false){
+      setCount(true)
+    }
+    else if (count== true) {
+      setCount(false)
+    }
+
   };
 
   
@@ -32,10 +40,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className='relative z-50  bg-sky-900 px-2 sm:px-4 py-2.5 drop-shadow-md  '
+        className=' bg-sky-900   flex flex-col '
 
       >
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <div className="lg:order-2 flex justify-between items-center px-3 py-3 lg:py-4 lg:mt-1 h-13">
           <Link href="/">
             <a>
               <div className="flex flex-row">
@@ -76,7 +84,7 @@ const Navbar = () => {
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
               className=
-              ' flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0  '
+              'flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0 `  '
             >
 
 
@@ -91,7 +99,7 @@ const Navbar = () => {
                 >
                   <a
                     href="#"
-                    className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600 '
+                    className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600 '
 
                   >
                     Coins
@@ -154,7 +162,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className='block py-2 pr-4 pl-3 text-white rounded md:p-0 hover:text-sky-600'
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
 
                 >
                   NFT
@@ -163,7 +171,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className='block py-2 pr-4 pl-3  text-white rounded md:p-0 hover:text-sky-600'
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
 
                 >
                   Resources
@@ -173,11 +181,22 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className='block py-2 pr-4 pl-3   text-white rounded md:p-0  hover:text-sky-600'
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
 
                 >
                   Learn
                 </a>
+              </li>
+              <a
+                  href="#"
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+
+                >
+                  <SearchBar/>
+                </a>
+
+              <li>
+
               </li>
 
              

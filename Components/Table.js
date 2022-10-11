@@ -6,9 +6,14 @@ import styles from "../styles/Table.module.css";
 import Link from 'next/link'
 import {AiFillCaretDown} from 'react-icons/ai';
 import {AiFillCaretUp} from 'react-icons/ai';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
-function Table({  filteredCoins }) {
+
+
+
+function Table({  filteredCoins, isLoading }) {
 
   const Chart ='https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/52.svg'
 
@@ -22,6 +27,10 @@ function Table({  filteredCoins }) {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
+  if(isLoading === true){
+    <Skeleton count={10} />
+  }
 
 
   return (
@@ -44,6 +53,7 @@ function Table({  filteredCoins }) {
       `}</style>
       
       <div className="overflow-x-auto bg-sky-900 relative">
+        
         
         <table className="w-full text-sm text-left text-white ">
           <thead 
@@ -83,16 +93,17 @@ function Table({  filteredCoins }) {
               .slice(pagesVisited, pagesVisited + usersPerPage)
               .map((coin) => (
                 <tr
-                  key={coin.id}
+                  key={coin.id  }
                   className='border-b hover:bg-sky-300 hover:text-black '
                     
                 >
                   <th
-                    className='py-4 px-6'
+                    className='py-4 px-6' 
                      
                   >
-                    {coin.market_cap_rank}
+                   {coin.market_cap_rank } 
                   </th>
+
                   <th
                     scope="row"
                     className='py-4 px-6 font-medium  whitespace-nowrap'
@@ -100,7 +111,10 @@ function Table({  filteredCoins }) {
                   >
                     <div className="flex">
                       <img width={22} src={coin.image} />
+
+
                       <span className="ml-2 hover:text-sky-600">
+                       
                         <b><Link href={`/coins/${coin.id}`}>{coin.name}</Link></b>
                       </span>
                       <span className="text-sky-500 ml-1">
@@ -155,6 +169,7 @@ function Table({  filteredCoins }) {
           disabledClassName={styles.paginationDisabled}
           activeClassName={styles.paginationActive}
         />
+       
       </div>
 
     </>
