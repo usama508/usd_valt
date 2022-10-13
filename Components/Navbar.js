@@ -11,28 +11,42 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import SearchBar from "./SearchBar";
 
 
+
 import Accordion from "./Accordion";
 
 
-const Navbar = () => {
+const Navbar = ({count,data}) => {
   const [dropDown, setDropDown] = useState(false);
   const [nav, setNav] = useState(false);
   const [search, setSearch] = useState(false)
+  const [ShowSearch, setShowSearch] = useState("hidden");
+
+  const [DropD, setDropD] = useState(false);
+  const menuClick = () => {
+    setDropD(!DropD);
+  };
+
+  const searchClick = () => {
+    ShowSearch === "hidden" ? setShowSearch("block") : setShowSearch("hidden");
+  };
 
 
   const display = () => {
     setNav(!nav);
-    if(count==false){
+    if (count == false) {
       setCount(true)
     }
-    else if (count== true) {
+    else if (count == true) {
       setCount(false)
     }
 
   };
 
-  
- 
+
+
+  const displaySearch = () => {
+    setSearch(!search);
+  };
 
 
 
@@ -40,7 +54,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className=' bg-sky-900   flex flex-col '
+        className='sticky md:relative top-0 z-50 border-sky-200 px-2 sm:px-4 py-1 drop-shadow-md bg-sky-900 flex flex-col '
 
       >
         <div className="lg:order-2 flex justify-between items-center px-3 py-3 lg:py-4 lg:mt-1 h-13">
@@ -112,7 +126,7 @@ const Navbar = () => {
                         <Link href={"/category"}>
                           <a>
                             <li className="text-base  flex pb-2 pt-1">
-                            
+
 
                               All Categories
                             </li>
@@ -138,7 +152,7 @@ const Navbar = () => {
                         <Link href={"/add"}>
                           <a>
                             <li className="text-base flex pb-2">
-                           
+
 
                               Recently Added
                             </li>
@@ -148,7 +162,7 @@ const Navbar = () => {
                           <a>
 
                             <li className="text-base flex pb-2" >
-                            
+
                               Trending
                             </li>
                           </a>
@@ -187,20 +201,23 @@ const Navbar = () => {
                   Learn
                 </a>
               </li>
-              <a
-                  href="#"
-                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+              <li
+                
+                  
+                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600 -mt-2   '
 
                 >
-                  <SearchBar/>
-                </a>
+                  <SearchBar />
+              
+                
 
-              <li>
 
-              </li>
 
-             
+                  </li>
+
+
             </ul>
+
 
 
 
@@ -225,11 +242,13 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`h-screen 
+        className={`h-screen w-full className='bg-sky-300 z-50 top-14 
          ${nav === true ? "block" : "hidden"}`}
       >
         <Accordion />
       </div>
+
+     
     </>
   );
 };

@@ -15,10 +15,10 @@ import 'react-accessible-accordion/dist/fancy-example.css';
     return (
         <Accordion allowMultipleExpanded allowZeroExpanded 
          >
-            <AccordionItem >
-                <AccordionItemHeading >
+            <AccordionItem className='bg-sky-300' >
+                <AccordionItemHeading className='0'  >
                     <AccordionItemButton>
-                       <span className='font-bold  p-0'>Coins</span>
+                       <span className='font-bold bg-sky-30 p-0'>Coins</span>
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel className='py-0 px-5 ' >
@@ -31,9 +31,9 @@ import 'react-accessible-accordion/dist/fancy-example.css';
                     </ul>
                 </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-                <AccordionItemHeading>
-                    <AccordionItemButton>
+            <AccordionItem className='bg-sky-300'>
+                <AccordionItemHeading >
+                    <AccordionItemButton >
                     <span className='font-bold  p-0 '>NFT</span>
                     </AccordionItemButton>
                 </AccordionItemHeading>

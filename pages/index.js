@@ -88,7 +88,7 @@ const allCoins= filteredCoins.filter(coin=>
       
 
       
-      <div className="mt-6 ml-20 lg:ml-16 ">
+      <div className="mt-6 ml-48 lg:ml-16 ">
         <Swipper w={w}/>
         
         </div>
@@ -110,7 +110,7 @@ const allCoins= filteredCoins.filter(coin=>
         <h2>Today's Cryptocurrency Prices  </h2>
        
       </div>
-        <Table  filteredCoins={ allCoins }  />
+        <Table  filteredCoins={filteredCoins}  />
        
       </div>
       <div>
@@ -126,6 +126,7 @@ export const getServerSideProps = async () => {
   );
 
   const filteredCoins = await res.json();
+  console.log(filteredCoins)
 
   return {
     props: {

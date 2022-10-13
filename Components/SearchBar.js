@@ -13,6 +13,7 @@ const SearchBar = () => {
   
 
   const ref = useRef();
+  const reff = useRef();
   const clickPoint = useRef();
   const handleFocus = () => {
     clickPoint.current.style.display = "none";
@@ -76,7 +77,7 @@ const SearchBar = () => {
           }}
         >
           <div
-            className={` ${hide} absolute top-30 mt-1 drop-shadow bg-sky-300 w-96 px-10 py-3 rounded-md`}
+            className={`${hide} absolute top-30 mt-1 drop-shadow bg-sky-300 w-96 px-10 py-3 rounded-md`}
           >
             {user
               .filter((val) => {
@@ -88,15 +89,15 @@ const SearchBar = () => {
                   return val;
                 }
               })
-              .map((value, key) => {
+              .map((val,key) => {
                 return (
-                  <div key={value.id}>
-                    <span className="hover:text-sky-600">
-                      <Link href={`/coins/${value.id}`}>
+                  <div key={val.id}>
+                    <span className="hover:text-sky-600 " >
+                      <Link href={`/coins/${val.id}`}>
                         <a>
                           <div className="flex">
-                            <img className="mr-2 mb-2" width="25" src={value.image} />
-                            {value.name}
+                            <img className="mr-2 mb-2" width="25" src={val.image} />
+                            {val.name}
                           </div>
                         </a>
                       </Link>
