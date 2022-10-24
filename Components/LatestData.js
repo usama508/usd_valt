@@ -4,7 +4,7 @@ import { FaGasPump, FaStar } from "react-icons/fa";
 
 function LatestData() {
   return (
-      <div className="lg:order-1 flex items-center px-4 lg:px-3 h-10 py-2 justify-between lg:p-7 ">
+      <div className="lg:order-1 flex bg-gray-100 items-center px-4 lg:px-3 h-10 py-2 justify-between lg:p-7 ">
         <div className="flex text-xs space-x-3 overflow-auto scrollbar-hide items-center dark:opacity-50">
           <span className="flex font-semibold ">
             <span>Coins:</span>

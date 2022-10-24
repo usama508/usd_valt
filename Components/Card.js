@@ -23,9 +23,9 @@ function Card(props) {
     <>
 
 
-        <div className={`transform hover:scale-110 cursor-pointer transition delay-100 w-3/12 p-2 py-4 shadow-xl border rounded-xl
+        <div className={`transform  z-0 w-full  m-2 hover:scale-110 cursor-pointer transition delay-100  p-2 py-4 shadow-xl border rounded-xl
                     bg-gradient-to-r ${Color[props.icon]}`}>
-          <div className="flex justify-between">
+          <div className="flex justify-between rounded-md drop-shadow-md ">
             <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-xl m-1 bg-opacity-30">
               {arrayIcon[props.icon]}
 
@@ -58,3 +58,51 @@ function Card(props) {
 
 
 export default Card;
+
+
+
+{/*function Card({heading, desc}) {
+  return (
+  <div className="z-0 w-full m-2">
+    <div className="rounded-md drop-shadow-md border border-gray-300 p-5">
+      <div >
+        <h2 className="text-lg font-semibold tracking-wide">
+          {heading}
+
+        </h2>
+
+      </div>
+      
+      <ul className="list-decimal ml-10">
+        <li className="text-base">
+          <span className="font-semibold">
+            PanCackSwap
+
+          </span>
+
+        </li>
+
+        <li className="text-base">
+          <span className="font-semibold">
+          Etherem
+
+          </span>
+
+        </li>
+
+        <li className="text-base">
+          <span className="font-semibold">
+            sahiba Inu
+
+          </span>
+
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  )
+}
+
+export default Card*/}

@@ -57,7 +57,7 @@ function Table({  filteredCoins, isLoading }) {
     setPageNumber(selected);
   };
 
-  if(isLoading){
+  if(isLoading == true){
     <Skeleton count={10} />
   }
 

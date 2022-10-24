@@ -9,27 +9,20 @@ import Swipper from "../Components/Swipper";
 import { useState, useEffect } from "react";
 import Container from "../Components/Container";
 import LatestData from '../Components/LatestData'
-import {useQuery} from 'react-query'
-import axios from "axios";
 
 
 
 
-const fetchCoins = ()=>{
-  return axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false")
-}
+
+
+
 
 
 
 
 
 export default function Home({ filteredCoins }) {
-  const { isLoading, data} = useQuery(
-    'coin',fetchCoins,
-    {
-      refetchInterval: 200000,
-    }
-  );
+  
 
   function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match
@@ -81,7 +74,7 @@ const allCoins= filteredCoins.filter(coin=>
 
   return (
     <div className="z-0">
-     <div className="m-4">
+     <div className="m-4 ml-7">
           <LatestData/>
 
         </div>
@@ -95,7 +88,7 @@ const allCoins= filteredCoins.filter(coin=>
 
         
       
-      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
+      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-7 ">
         <h2>Top Movers🔥</h2>
       </div>
       

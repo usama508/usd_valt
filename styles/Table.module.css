@@ -15,13 +15,15 @@
 .paginationBttns a:hover {
   color: rgb(7 89 133);;
   background-color:  rgb(125 211 252);;
- border-radius: 5px;
+ border-radius: 9px;
+ margin-left: 3px;
+ margin-right: 3px;
 }
 
 .paginationActive a {
    background-color:  rgb(125 211 252);
   color:rgb(7 89 133); ;
-  border-radius: 5px;
+  border-radius: 9px;
 
 }
 .paginationActive a:hover {
