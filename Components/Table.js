@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "../styles/Table.module.css";
 import Link from 'next/link'
@@ -76,7 +76,7 @@ function Table({  filteredCoins, isLoading }) {
           z-index: 1;
           background: rgb(12 74 110);
         }
-        table tbody tr:hover > th {
+        table tbody tr:hover  th {
           background: rgb(125 211 252)
         }
       `}</style>

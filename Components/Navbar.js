@@ -70,10 +70,10 @@ const Navbar = ({ count, filteredCoins }) => {
   return (
     <>
       <nav
-        className='sticky top-0 z-10  '
+        className='sticky top-0 z-10 p-0 '
 
       >
-        <div className="text-white bg-sky-900  flex flex-col">
+        <div className=" text-white bg-sky-900 flex flex-col">
           <div className="lg:order-2 flex justify-between items-center px-3 py-3 lg:py-4 lg:mt-1 h-13">
             <Link href="/">
               <a>
@@ -121,11 +121,11 @@ const Navbar = ({ count, filteredCoins }) => {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul
                 className=
-                'flex flex-col p-4 mt-4 rounded-lg border border-sky-100 md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium md:border-0 `  '
+                'md:flex md:items-center  md:static absolute w-full left-0 md-w-auto md:py-0 py-4 md:pl-96  md:opacity-100 opacity-0   duration-500  '
               >
 
 
-                <li>
+                <li className="mx-4 my-6 md:my-0">
                   <span
                     onMouseOver={() => {
                       setDropDown(true);
@@ -136,7 +136,7 @@ const Navbar = ({ count, filteredCoins }) => {
                   >
                     <a
                       href="#"
-                      className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600 '
+                      className='text-xl duration-500 text-white hover:text-sky-600 '
 
                     >
                       Coins
@@ -148,7 +148,7 @@ const Navbar = ({ count, filteredCoins }) => {
                         <ul className="">
                           <Link href={"/category"}>
                             <a>
-                              <li className="text-base  flex pb-2 pt-1">
+                              <li className="text-base text-black flex pb-2 pt-1">
 
 
                                 All Categories
@@ -157,7 +157,7 @@ const Navbar = ({ count, filteredCoins }) => {
                           </Link>
                           <Link href={"/gainer"}>
                             <a>
-                              <li className="text-base  flex pb-2">
+                              <li className="text-base text-black flex pb-2">
 
                                 Top Gainers
                               </li>
@@ -166,7 +166,7 @@ const Navbar = ({ count, filteredCoins }) => {
 
                           <Link href={"/loser"}>
                             <a>
-                              <li className="text-base  flex pb-2">
+                              <li className="text-base text-black flex pb-2">
 
                                 Top Losers
                               </li>
@@ -174,7 +174,7 @@ const Navbar = ({ count, filteredCoins }) => {
                           </Link>
                           <Link href={"/add"}>
                             <a>
-                              <li className="text-base flex pb-2">
+                              <li className="text-base text-black flex pb-2">
 
 
                                 Recently Added
@@ -184,7 +184,7 @@ const Navbar = ({ count, filteredCoins }) => {
                           <Link href={"/trending"}>
                             <a>
 
-                              <li className="text-base flex pb-2" >
+                              <li className="text-base text-black flex pb-2" >
 
                                 Trending
                               </li>
@@ -196,29 +196,29 @@ const Navbar = ({ count, filteredCoins }) => {
                     )}
                   </span>
                 </li>
-                <li>
+                <li className="mx-4 my-6 md:my-0">
                   <a
                     href="#"
-                    className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+                    className='text-xl duration-500 text-white hover:text-sky-600'
 
                   >
                     NFT
                   </a>
                 </li>
-                <li>
+                <li className="mx-4 my-6 md:my-0">
                   <a
                     href="#"
-                    className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+                    className='text-xl duration-500 text-white hover:text-sky-600'
 
                   >
                     Resources
                   </a>
                 </li>
 
-                <li>
+                <li className="mx-4 my-6 md:my-0">
                   <a
                     href="#"
-                    className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600'
+                    className='text-xl duration-500 text-white hover:text-sky-600'
 
                   >
                     Learn
@@ -227,7 +227,7 @@ const Navbar = ({ count, filteredCoins }) => {
                 <li
 
 
-                  className='block py-2 pr-4 pl-3 rounded md:p-0 text-white hover:text-sky-600 -mt-2   '
+                  className='text-xl duration-500 text-white hover:text-sky-600'
 
                 >
                   {<SearchBar />}

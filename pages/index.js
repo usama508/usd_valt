@@ -81,7 +81,7 @@ const allCoins= filteredCoins.filter(coin=>
       
 
       
-      <div className="mt-6 ml-48 lg:ml-16 ">
+      <div className="mt-6  lg:ml-20 ml-28 mr-24 ">
         <Swipper w={w}/>
         
         </div>

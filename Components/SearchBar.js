@@ -11,6 +11,7 @@ const SearchBar = () => {
   const [user, setUser] = useState([]);
   const [search, setSearch] = useState("");
   const [hide, setHide] = useState('hidden')
+
   
 
   const ref = useRef();
@@ -74,7 +75,8 @@ const SearchBar = () => {
         <OutsideClickHandler
           onOutsideClick={() => {
             
-            setHide("hidden")
+            setHide("hidden") 
+           
           }}
         >
           <div

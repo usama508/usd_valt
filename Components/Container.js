@@ -17,7 +17,7 @@ function Container() {
 <div className=''>
   </div>*/}
 
-  <div className='space-x-5 md:flex md:justify-center md:items-center p-9'>
+  <div className='space-x-6 md:flex md:justify-center md:items-center p-9'>
         
            <Card  title="TOTAL" balance={409.0790} icon={0}/> 
            <Card title="AVAILABLE" balance={300.0790} icon={1}/> 
