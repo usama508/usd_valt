@@ -7,8 +7,9 @@ import Table from "../Components/Table";
 import ScrollToTop from "../Components/ScrollToTop";
 import Swipper from "../Components/Swipper";
 import { useState, useEffect } from "react";
-import Container from "../Components/Container";
+
 import LatestData from '../Components/LatestData'
+import Cards from "../Components/Cards";
 
 
 
@@ -74,31 +75,30 @@ const allCoins= filteredCoins.filter(coin=>
 
   return (
     <div className="z-0">
-     <div className="m-4 ml-7">
+     <div className="m-3 ml-7">
           <LatestData/>
 
         </div>
       
 
       
-      <div className="mt-6  lg:ml-20 ml-28 mr-24 ">
+      <div className="mt-3  lg:ml-20 ml-28 mr-24 ">
         <Swipper w={w}/>
         
         </div>
 
         
-      
-      <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-7 ">
-        <h2>Top Movers🔥</h2>
-      </div>
+    
       
 
-      <div className="m-4">
+      <div className="md:flex md:justify-center   md:items-center  p-5">
       
-        <Container/>
+       < Cards heading={'Trending'}  />
+       < Cards heading={'Biggest Gainers'}/>
+       < Cards heading={'Recently Added'}/>
       </div>
 
-      <div className="m-4">
+      <div className="m-2">
       <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
         <h2>Today's Cryptocurrency Prices  </h2>
        

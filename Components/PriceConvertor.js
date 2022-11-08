@@ -119,10 +119,12 @@ const CMCpriceConverter = ({
       <br />
       <div className={styles.converter}>
         <div>
-          <div className='flex'>
-            <div className='avatar-container'>
-              <img src={fromLogo}/>
+          <div className='flex items-center'>
+            <div className='flex items-center'>
+              <div>
+              <img src={fromLogo}  className="w-24 rounded-full lg:w-8 "/>
             </div>
+            
             &nbsp; &nbsp;
             
             <div>
@@ -132,10 +134,11 @@ const CMCpriceConverter = ({
               <p>{fromSymbol}</p>
               <h4>{from}</h4>
             </div>
+            </div>
           </div>
         </div>
 
-        <div className='flex'>
+        <div className='flex w-3/5 items-center justify-between'>
          <input className='text-right outline-none justify-between bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
             
           </input>
@@ -144,16 +147,16 @@ const CMCpriceConverter = ({
          
          
           &nbsp;&nbsp; 
-          <div className=' flex mt-4 mr-3 ml-3'>
-          <RiArrowLeftRightLine/>
+          <div className=' flex justify-center '>
+          <RiArrowLeftRightLine />
           </div>
           &nbsp;&nbsp;
           <div className='flex'>
             {toLogo}
             &nbsp; &nbsp;
-            <div >
-              <p>{toSymbol}</p>
-              <h4>{to}</h4>
+            <div className='flex flex-col lg:w-2/5 ml-3' >
+              <span className='text-xs'>{toSymbol}</span>
+              <span className='font-semibold whitespace-nowrap'>{to}</span>
             </div>
           </div>
         </div>

@@ -70,17 +70,17 @@ const Navbar = ({ count, filteredCoins }) => {
   return (
     <>
       <nav
-        className='sticky top-0 z-10 p-0 '
+        className='sticky text-white  bg-sky-900  top-0 z-10  '
 
       >
-        <div className=" text-white bg-sky-900 flex flex-col">
-          <div className="lg:order-2 flex justify-between items-center px-3 py-3 lg:py-4 lg:mt-1 h-13">
+        <div className="  flex flex-col">
+          <div className="lg:order-2 flex  justify-between items-center px-1 py-1 lg:py-4 lg:-mt-3 h-13">
             <Link href="/">
               <a>
                 <div className="flex flex-row">
 
                   <span onClick={hideNavRes}
-                    className='self-center text-2xl leading-10 text-white font-semibold whitespace-nowrap font-pacifico tracking-wider'>
+                    className='flex text-2xl mt-1  ml-2'>
                     USD_VALT
                   </span>
                 </div>
@@ -118,10 +118,10 @@ const Navbar = ({ count, filteredCoins }) => {
 
 
 
-            <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <div className="hidden w-full -mt-2 md:block md:w-auto" id="navbar-default">
               <ul
                 className=
-                'md:flex md:items-center  md:static absolute w-full left-0 md-w-auto md:py-0 py-4 md:pl-96  md:opacity-100 opacity-0   duration-500  '
+                'md:flex md:items-center mt-2 md:static absolute w-full left-0 md-w-auto md:py-0 py-4 md:pl-96  md:opacity-100 opacity-0   duration-500  '
               >
 
 
@@ -136,7 +136,7 @@ const Navbar = ({ count, filteredCoins }) => {
                   >
                     <a
                       href="#"
-                      className='text-xl duration-500 text-white hover:text-sky-600 '
+                      className='text-xl duration-500  text-white hover:text-sky-600 '
 
                     >
                       Coins
@@ -145,7 +145,7 @@ const Navbar = ({ count, filteredCoins }) => {
                     {dropDown && (
                       <div className=" absolute top-13 right-30 bg-sky-200  rounded-md p-5 w-1/4 z-50">
                         <div className=" bg-sky-200 transform w-7 h-6 absolute -mt-1 top-0 rounded-sm  right-300 rotate-45 "></div>
-                        <ul className="">
+                        <ul >
                           <Link href={"/category"}>
                             <a>
                               <li className="text-base text-black flex pb-2 pt-1">
@@ -199,7 +199,7 @@ const Navbar = ({ count, filteredCoins }) => {
                 <li className="mx-4 my-6 md:my-0">
                   <a
                     href="#"
-                    className='text-xl duration-500 text-white hover:text-sky-600'
+                    className='text-xl  duration-500 text-white hover:text-sky-600'
 
                   >
                     NFT
@@ -226,11 +226,11 @@ const Navbar = ({ count, filteredCoins }) => {
                 </li>
                 <li
 
+                  className=" "
 
-                  className='text-xl duration-500 text-white hover:text-sky-600'
 
                 >
-                  {<SearchBar />}
+                  <SearchBar />
 
 
 

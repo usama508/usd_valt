@@ -32,15 +32,15 @@ function Card(props) {
             </div>
 
           </div>
-          <p className="text-gray-200 text-xs">
+          <p className=" text-xs">
             {props.title}
 
           </p>
-          <p className="text-gray-50 text-lg font-semibold">
+          <p className=" text-lg font-semibold">
             {props.balance} EGLD
 
           </p>
-          <p className="text-gray-300 text-sm">
+          <p className=" text-sm">
             ${balance}
 
           </p>

@@ -8,7 +8,7 @@ import Link from 'next/link'
 function SearchM({ searchHidden, hideSearch }) {
     const [search, setSearch] = useState("")
     const [currency, setCurrency] = useState([])
-  
+
 
     useEffect(() => {
         console.log('hello')
@@ -32,14 +32,14 @@ function SearchM({ searchHidden, hideSearch }) {
         setSearch(e.target.value)
     }
 
-   
+
     return (
-        <div className={`${searchHidden} fixed -mt-14 z-50 h-screen w-full bg-sky-300`}>
-            <form className='bg-sky-200 -mt-1 py-2'>
+        <div className={`${searchHidden} fixed -mt-10 z-50 h-screen w-full bg-sky-200`}>
+            <form className='bg-sky-300 -mt-1 py-2'>
                 <label
                     htmlFor="default-search"
                     className="mb-2 text-sm font-normal  sr-only ">
-                    Search 
+                    Search
                 </label>
                 <div className='flex justify-between'>
                     <div className='relative'>
@@ -64,35 +64,43 @@ function SearchM({ searchHidden, hideSearch }) {
                     </div>
                 </div>
             </form>
-            <div className='h-screen  mx-4 my-2 overflow-scroll'>
+            
+            <div className='h-screen  mx-12 my-2 overflow-scroll'>
+            <div className="  mx-2 my-2   text-black">
+            <p>Cryptoassets</p>
+          </div>
                 {
-                    currency.filter((val)=>{
-                        if(search == ""){
+                    currency.filter((val) => {
+                        if (search == "") {
                             return val
                         }
-                        else if(val.name.toLowerCase().includes(search.toLowerCase())){
+                        else if (val.name.toLowerCase().includes(search.toLowerCase())) {
                             return val
                         }
                     })
-                    .map((val,key)=>{
-                        return(
-                            <div key={val.id}>
-                                <span className='hover:text-blue-600'>
-                                    <Link href={`/coins/${val.id}`} >
-                                    <a>
-                                        <div className='flex' onClick={hideSearch}>
-                                            <img className='mr-2 mb-2' width='25' src={val.image}/>
-                                            {val.name}
+                        .map((val, key) => {
+                            return (
+                                <div key={val.id}>
+                                    <span className='hover:text-blue-600'>
+                                        <Link href={`/coins/${val.id}`} >
+                                            <a>
+                                                <div className='flex ' onClick={hideSearch}>
+                                                    <img className='mr-2 mb-2 hover:text-slate-200' width='25' src={val.image} />
+                                                    {val.name}
+                                                    <span className="mr-2 mb-2 bg-sky-200 text-sky-800 text-xs font-bold px-2.5 py-1.5  rounded">
 
-                                        </div>
+                                                        ${val.current_price}
+                                                    </span>
 
-                                    </a>
-                                    </Link>
-                                </span>
+                                                </div>
 
-                        </div>
-                        )
-                    })
+                                            </a>
+                                        </Link>
+                                    </span>
+
+                                </div>
+                            )
+                        })
                 }
 
             </div>

@@ -164,10 +164,9 @@ function info({ coin }) {
 
 
 
-        <div className={styles.info}>
-          <main className={styles.main}>
+        
 
-            <div className={styles.flexStart}>
+            {/*<div className={styles.flexStart}>
               <div className={styles.tabContainerWrapper}>
                 <div className={styles.flexBetween}>
                   <div className={styles.tabContainer}>
@@ -215,13 +214,14 @@ function info({ coin }) {
 
                 </div>
                 <br />
-                <br />
+                <br />*/}
 
 
+<div className={styles.info}>
+          
 
-
-                <div className='m-6'>
-                  <div className='text-xl md:text-3xl  text-black font-bold mb-3 pt-3 ml-3'>
+                <div className='m-2 '>
+                  <div className='text-xl md:text-3xl  text-black font-bold mb-3 mt-20 ml-3'>
                     <h1>{coin.name} to USD Convertor</h1>
                   </div>
 
@@ -239,8 +239,9 @@ function info({ coin }) {
 
               </div>
             </div>
-          </main>
-        </div>
+          
+       
+        
 
 
 
@@ -254,7 +255,7 @@ function info({ coin }) {
 
 
 
-      </div>
+      
 
     </>
   )

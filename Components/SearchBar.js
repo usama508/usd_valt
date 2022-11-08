@@ -12,18 +12,18 @@ const SearchBar = () => {
   const [search, setSearch] = useState("");
   const [hide, setHide] = useState('hidden')
 
-  
+
 
   const ref = useRef();
   const reff = useRef();
   //const clickPoint = useRef();
   //const handleFocus = () => {
-    //clickPoint.current.style.display = "none";
- // };
+  //clickPoint.current.style.display = "none";
+  // };
 
   //const handleBlur = () => {
   //  clickPoint.current.style.display = "block";
- // };
+  // };
 
   const fetchUrl = () => {
     fetch(
@@ -54,70 +54,79 @@ const SearchBar = () => {
 
   return (
     <>
-      <form>
-        <div className="items-center px-4 flex justify-center" >
-          <div className="relative mr-3">
+      <form className="order-first mb-10 md:mb-0 md:order-last md:pr-8">
+        <div className="items-center px-1 flex justify-center" >
+          <div className="relative mt-3 ml-0">
             <div className="absolute top-3 left-3 items-center" >
               <svg className="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
             </div>
             <input
               type="text"
-              className="block p-2 pl-10 w-70 text-sky-900 bg-sky-50 rounded-lg border border-sky-300 focus:pl-3"
-              placeholder='Search Coin...' 
-             // onFocus={handleFocus}
+              className="block p-2 pl-10 w-70 text-sky-900 bg-sky-50 rounded-lg border border-sky-300 "
+              placeholder='Search Coin...'
+              // onFocus={handleFocus}
               //onBlur={handleBlur}
               ref={ref}
-            onChange={getValue}
-            required
+              onChange={getValue}
+              required
             />
           </div>
         </div></form>
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            
-            setHide("hidden") 
-           
-          }}
-        >
-          <div
-            className={`${hide} absolute top-30 mt-1 drop-shadow bg-sky-300 w-96 px-10 py-3 rounded-md`}
-          >
-            <div className="mb-4 text-black">
-              <p>Coins</p>
-            </div>
-            {user
-              .filter((val) => {
-                if (search == "") {
-                  return val;
-                } else if (
-                  val.name.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map((val,key) => {
-                return (
-                  <div key={val.id}>
-                    <span className="text-black " >
-                      <Link href={`/coins/${val.id}`}>
-                        <a>
-                          <div className="flex">
-                            <img className="mr-2 mb-2" width="25" src={val.image} />
-                            {val.name}
-                          </div>
-                        </a>
-                      </Link>
-                    </span>
-                  </div>
-                );
-              })}
-              <div className="mb-4 mt-4 text-black">
-                <p>Exchange</p>
-              </div>
-          </div>
-          </OutsideClickHandler>
+      <OutsideClickHandler
+        onOutsideClick={() => {
 
-      </>
+          setHide("hidden")
+
+        }}
+      >
+        <div
+          className={`${hide} absolute top-30 mt-1 mx-1 drop-shadow bg-sky-200 w-96 px-8 py-3 rounded-md`}
+        >
+          <div className="  mx-2 my-2  text-xs text-black">
+            <p>Cryptoassets</p>
+          </div>
+          {user
+            .filter((val) => {
+              if (search == "") {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(search.toLowerCase())
+
+              ) {
+                return val;
+              }
+            })
+            .map((val, key) => {
+              return (
+                <div key={val.id}>
+                  <span className="text-black " >
+                    <Link href={`/coins/${val.id}`}>
+                      <a>
+                        <div className="flex ">
+                          <img className="mx-2 my-1 text-xs " width='22' height='22' src={val.image} />
+                          {val.name}
+                          <span className="">
+
+                            <span className=" bg-sky-200 text-sky-800 justify-end text-xs  mr-2  px-2.5 py-1.5 rounded">
+
+                              ${val.current_price}
+                            </span></span>
+                        </div>
+
+
+                      </a>
+                    </Link>
+
+                  </span>
+
+                </div>
+              );
+            })}
+
+        </div>
+      </OutsideClickHandler>
+
+    </>
   );
 }
 

@@ -57,8 +57,18 @@ function Table({  filteredCoins, isLoading }) {
     setPageNumber(selected);
   };
 
-  if(isLoading == true){
-    <Skeleton count={10} />
+  if(isLoading){
+    return <>
+    <div>
+      <Skeleton height={40}/>
+    </div>
+    <div>
+      <Skeleton count={10} height={30}/>
+    </div>
+    
+    
+    
+    </>
   }
 
 
@@ -69,12 +79,18 @@ function Table({  filteredCoins, isLoading }) {
           position: sticky;
           left: 0;
          background: rgb(12 74 110);
+         border-bottom-width: 2px;
+         border-color: rgb(209 213 219);
+        
         }
         table tbody th {
           position: sticky;
           left: 0;
           z-index: 1;
           background: rgb(12 74 110);
+          border-bottom-width: 2px;
+          border-color: rgb(209 213 219);
+
         }
         table tbody tr:hover  th {
           background: rgb(125 211 252)
@@ -84,69 +100,69 @@ function Table({  filteredCoins, isLoading }) {
       <div className="overflow-x-auto bg-sky-900 relative">
         
         
-        <table className="w-full text-sm text-left text-white ">
+        <table className=" text-sm w-full text-white ">
           <thead 
-            className='text-xs uppercase border-b border-t border-sky-300'
+            className='text-xs uppercase  border-b-2 border-t-2 border-gray-300'
               
           >
-            <tr>
-              <th scope="col" className="py-3 px-6 cursor-pointer" onClick={()=>{sorting("market_cap_rank"); setHash(hash + 1); setId(7)}}>
-                <span className="flex"># 
+            <tr >
+              <th scope="col" className="py-4 px-6 text-center  cursor-pointer" onClick={()=>{sorting("market_cap_rank"); setHash(hash + 1); setId(7)}}>
+              <span className="flex flex-row"> # 
                 { hash !=0 && hash%2 !==0 && id===7 && <AiFillCaretUp className="mt-1 mr-2"/>}
                   { hash !=0 &&  hash%2 ==0 && id===7 && <AiFillCaretDown className="mt-1 mr-2"/> }
                 
-                
                 </span>
+              
               </th>
-              <th scope="col" className="py-3 px-6 cursor-pointer" id="table-head-name" onClick={()=>{sorting("name"); setCount(count + 1); setId(1) }}>
-                <span className="flex">Name
+              <th scope="col" className="py-4 px-6 text-left cursor-pointer" id="table-head-name" onClick={()=>{sorting("name"); setCount(count + 1); setId(1) }}>
+                <span className="flex flex-row">Name
                 {count !=0 && count%2 !==0 && id===1 && <AiFillCaretUp className="mt-1 mr-2"/>}
                   {count !=0 && count%2 ==0 && id===1 && <AiFillCaretDown className="mt-1 mr-2"/> }
+                </span>
                 
+                
+              </th>
+              <th scope="col" className="py-4 px-6  text-right cursor-pointer " onClick={()=>{sorting("current_price"); setPrice(price+1); setId(2)}}>
+                <span className="flex flex-row-reverse">Price 
+                {price !=0 && price%2 !==0 && id===2 && <AiFillCaretUp className="mt-1 mr-0"/>}
+                  {price !=0 && price%2 ==0 && id===2 && <AiFillCaretDown className="mt-1 mr-0"/> }
                 
                 </span>
+              
               </th>
-              <th scope="col" className="py-3 px-6 cursor-pointer " onClick={()=>{sorting("current_price"); setPrice(price+1); setId(2)}}>
-                <span className="flex">Price 
-                {price !=0 && price%2 !==0 && id===2 && <AiFillCaretUp className="mt-1 mr-2"/>}
-                  {price !=0 && price%2 ==0 && id===2 && <AiFillCaretDown className="mt-1 mr-2"/> }
-                
+              <th scope="col" className=" py-4 px-6   cursor-pointer" onClick={()=>{sorting("price_change_percentage_24h"); setH(h + 1); setId(3)}}>
+               <span className="flex ml-8">24H
+                {h !=0 && h%2 !==0 && id===3 && <AiFillCaretUp className="mt-1 mr-0 "/>}
+                  {h !=0 && h%2 ==0 && id===3 && <AiFillCaretDown className="mt-1 mr-0"/> }
                 
                 </span>
+               
               </th>
-              <th scope="col" className="py-3 px-6 text-center cursor-pointer" onClick={()=>{sorting("price_change_percentage_24h"); setH(h + 1); setId(3)}}>
-                 <span className="flex">24H
-                {h !=0 && h%2 !==0 && id===3 && <AiFillCaretUp className="mt-1 mr-2"/>}
-                  {h !=0 && h%2 ==0 && id===3 && <AiFillCaretDown className="mt-1 mr-2"/> }
+              <th scope="col" className="py-4 px-6 text-right cursor-pointer" onClick={()=>{sorting("market_cap"); setCap(cap + 1); setId(4)}}>
+                <span className="flex flex-row-reverse">Market Cap
+                {cap !=0 && cap%2 !==0 && id===4 && <AiFillCaretUp className="mt-1 mr-0"/>}
+                  {cap !=0 && cap%2 ==0 && id===4 && <AiFillCaretDown className="mt-1 mr-0"/> }
                 
+                </span> 
+              
+              </th>
+              <th scope="col" className="py-4 px-6 text-right cursor-pointer" onClick={()=>{sorting("total_volume"); setVol(vol + 1); setId(5)}}>
+                <span className="flex flex-row-reverse">Volume
+                {vol !=0 && vol%2 !==0 && id===5 && <AiFillCaretUp className="mt-1 mr-0"/>}
+                  {vol !=0 && vol%2 ==0 && id===5 && <AiFillCaretDown className="mt-1 mr-0"/> }
                 
                 </span>
+               
               </th>
-              <th scope="col" className="py-3 px-6 cursor-pointer" onClick={()=>{sorting("market_cap"); setCap(cap + 1); setId(4)}}>
-                <span className="flex"> Market Cap
-                {cap !=0 && cap%2 !==0 && id===4 && <AiFillCaretUp className="mt-1 mr-2"/>}
-                  {cap !=0 && cap%2 ==0 && id===4 && <AiFillCaretDown className="mt-1 mr-2"/> }
-                
+              <th scope="col" className="py-4 px-6 text-right  cursor-pointer" onClick={()=>{sorting("circulating_supply"); setSupply(supply + 1); setId(6)}}>
+                <span className="flex flex-row-reverse">Circulating Supply
+                {supply !=0 && supply%2 !==0 && id===6 && <AiFillCaretUp className="mt-1 "/>}
+                  {supply !=0 && supply%2 ==0 && id===6 && <AiFillCaretDown className="mt-1 mr-1"/> }
                 
                 </span>
+                
               </th>
-              <th scope="col" className="py-3 px-6 cursor-pointer" onClick={()=>{sorting("total_volume"); setVol(vol + 1); setId(5)}}>
-                <span className="flex"> Volume
-                {vol !=0 && vol%2 !==0 && id===5 && <AiFillCaretUp className="mt-1 mr-2"/>}
-                  {vol !=0 && vol%2 ==0 && id===5 && <AiFillCaretDown className="mt-1 mr-2"/> }
-                
-                
-                </span>
-              </th>
-              <th scope="col" className="py-3 px-6 text-center cursor-pointer" onClick={()=>{sorting("circulating_supply"); setSupply(supply + 1); setId(6)}}>
-                 <span className="flex">Circulating Supply
-                {supply !=0 && supply%2 !==0 && id===6 && <AiFillCaretUp className="mt-1 mr-2"/>}
-                  {supply !=0 && supply%2 ==0 && id===6 && <AiFillCaretDown className="mt-1 mr-2"/> }
-                
-                
-                </span>
-              </th>
-              <th scope="col" className="py-3 px-6 text-center">
+              <th scope="col" className="py-4 px-6   text-center">
                 Graph
               </th>
             </tr>
@@ -158,11 +174,11 @@ function Table({  filteredCoins, isLoading }) {
               .map((coin) => (
                 <tr
                   key={coin.id  }
-                  className='border-b hover:bg-sky-300 hover:text-black '
+                  className='border-b-2  border-gray-300 hover:bg-sky-300 hover:text-black '
                     
                 >
                   <th
-                    className='py-4 px-6' 
+                    className='py-4 px-6 text-left ' 
                      
                   >
                    {coin.market_cap_rank } 
@@ -173,11 +189,11 @@ function Table({  filteredCoins, isLoading }) {
                     className='py-4 px-6 font-medium  whitespace-nowrap'
                      
                   >
-                    <div className="flex">
+                    <div className="flex text-left">
                       <img width={22} src={coin.image} />
 
 
-                      <span className="ml-2 hover:text-sky-600">
+                      <span className=" hover:text-sky-600">
                        
                         <b><Link href={`/coins/${coin.id}`}>{coin.name}</Link></b>
                       </span>
@@ -186,22 +202,22 @@ function Table({  filteredCoins, isLoading }) {
                       </span>
                     </div>
                   </th>
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-6 text-right">
                     <b>${coin.current_price.toLocaleString()}</b>
                   </td>
-                  {coin.price_change_percentage_24h>0 && <td className="flex mt-4 text-green-400 py-4 px-6">
-                    <AiFillCaretUp className="mt-1 mr-1"/>{coin.price_change_percentage_24h.toFixed(2)}%
+                  {coin.price_change_percentage_24h>0 && <td className="flex text-right   mt-4 text-green-400 py-4 px-6">
+                    <AiFillCaretUp className=" mt-1 mr-0"/>{coin.price_change_percentage_24h.toFixed(2)}%
                   </td>}
-                  {coin.price_change_percentage_24h<0 && <td className="flex mt-4 text-red-400 py-4 px-6">
-                   <AiFillCaretDown className="mt-1 mr-1" />{coin.price_change_percentage_24h.toFixed(2)}%
+                  {coin.price_change_percentage_24h<0 && <td className="flex text-right	 mt-4 text-red-400 py-4 px-6">
+                   <AiFillCaretDown className=" mt-1 mr-0 " />{coin.price_change_percentage_24h.toFixed(2)}%
                   </td>}
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-6  text-right">
                     ${coin.market_cap.toLocaleString()}
                   </td>
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-6  text-right">
                     ${coin.total_volume.toLocaleString()}
                   </td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-4 px-6  text-right">
                     {coin.circulating_supply.toLocaleString()}{" "}
                     <span className="font-medium">
                       {coin.symbol.toUpperCase()}
@@ -219,7 +235,7 @@ function Table({  filteredCoins, isLoading }) {
 
 
       <div
-        className='pt-5 flex items-center justify-center overflow-x-hidden'
+        className='pt-2 flex items-center justify-center overflow-x-hidden'
          
       >
         <ReactPaginate 
