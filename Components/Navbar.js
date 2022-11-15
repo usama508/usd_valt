@@ -226,7 +226,7 @@ const Navbar = ({ count, filteredCoins }) => {
                 </li>
                 <li
 
-                  className="w-full "
+                  className='mx-4 my-6 md:my-0' 
 
 
                 >

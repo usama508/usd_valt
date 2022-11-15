@@ -94,8 +94,8 @@ const allCoins= filteredCoins.filter(coin=>
       <div className=" md:flex md:justify-center  md:items-center  p-5">
       
        < Cards heading={'Trending'}/>
-       < Cards heading={'Top_Gainers'}/>
-       < Cards heading={'Newly_Added'}/>
+       < Cards heading={'Top Gainers'}/>
+       < Cards heading={'Recently Added'}/>
       </div>
       
 

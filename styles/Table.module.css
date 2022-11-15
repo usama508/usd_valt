@@ -2,6 +2,7 @@
   display:flex ;
   background-color:  rgb(7 89 133);
   border-radius: 5px;
+  
 }
 
 .paginationBttns a {
@@ -40,12 +41,12 @@
 
 
 
-@media only screen and (max-width: 443px) {
+@media only screen and (max-width: 543px) {
   .paginationBttns a {
       margin: 0.2rem;
     }    
 }
-@media only screen and (max-width: 379px) {
+@media only screen and (max-width: 450px) {
   .paginationBttns a {
       margin: 0.3rem;
       padding: 0.3rem;

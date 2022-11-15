@@ -106,7 +106,7 @@ function info({ coin }) {
 
             <div
               className='flex mt-6 '
-
+              
             >
               <span>
                 <img src={coin.image.small} alt="" />

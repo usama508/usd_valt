@@ -41,9 +41,9 @@ function Cards({ heading }) {
 
           <table>
 
-            <thead className="text-lg font-semibold   items-baseline">
+            <thead className="text-lg font-semibold  table-caption tracking-wide">
               <tr>
-                <th>
+                <th >
                   {heading}
                 </th>
               </tr>
@@ -60,7 +60,7 @@ function Cards({ heading }) {
 
                   >
                     <th
-                      className=' w-1/12'
+                      className='text-sm text-center w-1/12 ml-3'
 
                     >
                       {coin.market_cap_rank}
@@ -68,27 +68,27 @@ function Cards({ heading }) {
 
                     <th
                       scope="row"
-                      className=' font-medium  '
+                      className=' '
 
                     >
                       <div className="flex  ">
-                        <img width='22' src={coin.image} className='mr-1  ' />
+                        <img width='22' src={coin.image} className=' ml-4 ' />
 
 
-                        <span className=" hover:text-sky-600  text-left ">
+                        <span className=" hover:text-sky-600 font-medium text-left ml-1">
 
                           <b><Link href={`/coins/${coin.id}`}>{coin.name}</Link></b>
                         </span>
-                        <span className="text-gray-300  text-xs mt-1 ml-1 ">
+                        <span className="text-gray-300 font-semibold text-left text-xs mt-1 ml-1 ">
                           {coin.symbol.toUpperCase()}
                         </span>
                       </div>
                     </th>
-                    <div className='justify-items-end'>
-                      {coin.price_change_percentage_24h > 0 && <td className="flex    mt-0 text-green-400 py-4 px-6">
+                    <div >
+                      {coin.price_change_percentage_24h > 0 && <td className="flex  text-right ml-24  mt-0 text-green-400 py-2 px-3">
                         <AiFillCaretUp className=" mt-1 " />{coin.price_change_percentage_24h.toFixed(2)}%
                       </td>}
-                      {coin.price_change_percentage_24h < 0 && <td className="flex  flex-items-end	 mt-0 text-red-400 py-4 px-6">
+                      {coin.price_change_percentage_24h < 0 && <td className="flex ml-24 text-right	 mt-0 text-red-400 py-2 px-3">
                         <AiFillCaretDown className=" mt-1  " />{coin.price_change_percentage_24h.toFixed(2)}%
                       </td>}
 
