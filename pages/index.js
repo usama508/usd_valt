@@ -75,14 +75,14 @@ const allCoins= filteredCoins.filter(coin=>
 
   return (
     <div className="z-0">
-     <div className="m-3 ml-7">
+     <div className="mt-3 ml-7 mr-7">
           <LatestData/>
 
         </div>
       
 
       
-      <div className="mt-3  lg:ml-20 ml-28 mr-24 ">
+      <div className="mt-3  lg:ml-20 ml-28 mr-24">
         <Swipper w={w}/>
         
         </div>
@@ -91,12 +91,13 @@ const allCoins= filteredCoins.filter(coin=>
     
       
 
-      <div className="md:flex md:justify-center   md:items-center  p-5">
+      <div className=" md:flex md:justify-center  md:items-center  p-5">
       
-       < Cards heading={'Trending'}  />
-       < Cards heading={'Biggest Gainers'}/>
-       < Cards heading={'Recently Added'}/>
+       < Cards heading={'Trending'}/>
+       < Cards heading={'Top_Gainers'}/>
+       < Cards heading={'Newly_Added'}/>
       </div>
+      
 
       <div className="m-2">
       <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">

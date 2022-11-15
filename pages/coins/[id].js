@@ -11,7 +11,7 @@ import PriceConvertor from '../../Components/PriceConvertor'
 
 
 const styles = {
-  activeTab: 'p-1 px-2 mr-2 rounded-lg  bg-sky-900',
+  activeTab: 'p-1 px-2 mr-2  rounded-lg  bg-sky-900',
   tabItem: 'px-2 ',
   tabContainer: 'flex items-center p-2 m-6  rounded-xl bg-sky-900 border border-gray-100/10 text-sm',
   info: 'text-white mx-auto overflow-hidden max-w-screen-2xl ',
@@ -226,6 +226,7 @@ function info({ coin }) {
                   </div>
 
                   <PriceConvertor
+                 
                     from={coin.name}
                     fromSymbol={coin.symbol}
                     fromLogo={coin.image.small}

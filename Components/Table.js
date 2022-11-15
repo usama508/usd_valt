@@ -131,7 +131,7 @@ function Table({  filteredCoins, isLoading }) {
               
               </th>
               <th scope="col" className=" py-4 px-6   cursor-pointer" onClick={()=>{sorting("price_change_percentage_24h"); setH(h + 1); setId(3)}}>
-               <span className="flex ml-8">24H
+               <span className="flex ml-7">24H
                 {h !=0 && h%2 !==0 && id===3 && <AiFillCaretUp className="mt-1 mr-0 "/>}
                   {h !=0 && h%2 ==0 && id===3 && <AiFillCaretDown className="mt-1 mr-0"/> }
                 
@@ -205,10 +205,10 @@ function Table({  filteredCoins, isLoading }) {
                   <td className="py-4 px-6 text-right">
                     <b>${coin.current_price.toLocaleString()}</b>
                   </td>
-                  {coin.price_change_percentage_24h>0 && <td className="flex text-right   mt-4 text-green-400 py-4 px-6">
+                  {coin.price_change_percentage_24h>0 && <td className="flex text-right   mt-1 text-green-400 py-4 px-6">
                     <AiFillCaretUp className=" mt-1 mr-0"/>{coin.price_change_percentage_24h.toFixed(2)}%
                   </td>}
-                  {coin.price_change_percentage_24h<0 && <td className="flex text-right	 mt-4 text-red-400 py-4 px-6">
+                  {coin.price_change_percentage_24h<0 && <td className="flex text-right	 mt-1 text-red-400 py-4 px-6">
                    <AiFillCaretDown className=" mt-1 mr-0 " />{coin.price_change_percentage_24h.toFixed(2)}%
                   </td>}
                   <td className="py-4 px-6  text-right">

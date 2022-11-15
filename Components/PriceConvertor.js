@@ -91,8 +91,8 @@ import {useState} from 'react'
 
 
 const styles = {
-  converter: `flex items-center justify-between bg-sky-900 border border-gray-500/10 px-5 py-5 rounded-xl`,
-  convertButton: `bg-[#1d4ed8] p-2 px-5 w-min rounded-xl mt-5 cursor-pointer hover:opacity-60`,
+  converter: `flex items-center justify-between bg-sky-900 border border-gray-500 px-3 py-5 rounded-xl`,
+  convertButton: `  rounded-xl  cursor-pointer hover:opacity-60`,
 }
 
 const CMCpriceConverter = ({
@@ -122,7 +122,7 @@ const CMCpriceConverter = ({
           <div className='flex items-center'>
             <div className='flex items-center'>
               <div>
-              <img src={fromLogo}  className="w-24 rounded-full lg:w-8 "/>
+              <img src={fromLogo}  className="w-12 rounded-full lg:w-8 "/>
             </div>
             
             &nbsp; &nbsp;
@@ -138,24 +138,24 @@ const CMCpriceConverter = ({
           </div>
         </div>
 
-        <div className='flex w-3/5 items-center justify-between'>
-         <input className='text-right outline-none justify-between bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
+        <div className='flex w-2/4 items-center justify-between'>
+         <input className='text-left ml-4 outline-none justify-between bg-sky-900' placeholder='0'  onChange={(e)=>{setBitprice(e.target.value)}}>
             
           </input>
           
            
-         
+      
          
           &nbsp;&nbsp; 
-          <div className=' flex justify-center '>
-          <RiArrowLeftRightLine />
+          <div className='flex text-left' >
+          <RiArrowLeftRightLine  />
           </div>
           &nbsp;&nbsp;
           <div className='flex'>
             {toLogo}
             &nbsp; &nbsp;
-            <div className='flex flex-col lg:w-2/5 ml-3' >
-              <span className='text-xs'>{toSymbol}</span>
+            <div className='flex flex-col  lg:w-1/5 ml-3' >
+              <span className='text-xs '>{toSymbol}</span>
               <span className='font-semibold whitespace-nowrap'>{to}</span>
             </div>
           </div>
