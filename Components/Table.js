@@ -193,7 +193,7 @@ function Table({  filteredCoins, isLoading }) {
                       <img width={22} src={coin.image} />
 
 
-                      <span className=" hover:text-sky-600">
+                      <span className="ml-1 hover:text-sky-600">
                        
                         <b><Link href={`/coins/${coin.id}`}>{coin.name}</Link></b>
                       </span>

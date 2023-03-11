@@ -80,7 +80,7 @@ const SearchBar = () => {
         }}
       >
         <div
-          className={`${hide} absolute top-30 mt-1 mx-1 drop-shadow bg-sky-200 w-96 px-8 py-3 rounded-md`}
+          className={`${hide} absolute top-30 mt-1 ml-1 drop-shadow bg-sky-200 w-96 px-8 py-3 rounded-md`}
         >
           <div className="  mx-2 my-2  text-xs text-black">
             <p>Cryptoassets</p>

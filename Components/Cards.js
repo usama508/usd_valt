@@ -34,8 +34,8 @@ function Cards({ heading }) {
 
   return (
     <>
-      <div className='z-0 w-full h-full m-2'>
-        <div className='rounded-md border shadow-md shadow-gray-200 border-gray-300 p-3'>
+      <div className='z-0 w-full m-2'>
+        <div className='rounded-md border shadow-md shadow-gray-200 border-gray-300 p-3 '>
 
 
 

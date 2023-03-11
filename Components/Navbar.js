@@ -70,7 +70,7 @@ const Navbar = ({ count, filteredCoins }) => {
   return (
     <>
       <nav
-        className='sticky text-white  bg-sky-900  top-0 z-10  '
+        className='sticky text-white top-0 z-50  bg-sky-900    '
 
       >
         <div className="  flex flex-col">
@@ -224,20 +224,11 @@ const Navbar = ({ count, filteredCoins }) => {
                     Learn
                   </a>
                 </li>
-                <li
 
-                  className='mx-4 my-6 md:my-0' 
-
-
-                >
-                  <SearchBar />
-
-
-
-
-
-
+                <li>
+                  <SearchBar/>
                 </li>
+              
 
 
               </ul>

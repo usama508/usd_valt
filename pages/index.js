@@ -72,6 +72,7 @@ const allCoins= filteredCoins.filter(coin=>
   coin.name.toLowerCase().includes(search.toLowerCase())
   )
 
+  
 
   return (
     <div className="z-0">
@@ -91,18 +92,18 @@ const allCoins= filteredCoins.filter(coin=>
     
       
 
-      <div className=" md:flex md:justify-center  md:items-center  p-5">
+      {/*<div className=" md:flex md:justify-center  md:items-center  p-5 md:ml-12 md:mr-12">
       
        < Cards heading={'Trending'}/>
        < Cards heading={'Top Gainers'}/>
        < Cards heading={'Recently Added'}/>
-      </div>
+  </div>*/}
       
 
       <div className="m-2">
       <div className="text-xl md:text-3xl text-sky-900 font-bold mb-3 pt-3 ml-3 ">
         <h2>Today's Cryptocurrency Prices  </h2>
-       
+        
       </div>
         <Table  filteredCoins={filteredCoins}  />
        
